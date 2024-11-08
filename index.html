@@ -16,16 +16,6 @@
 
   <body>
     <div id="content">
-      <div id="column2">
-        <iframe
-          allowfullscreen
-          sandbox="allow-top-navigation allow-scripts allow-popups allow-popups-to-escape-sandbox"
-          width="500"
-          height="100vh"
-          style="position: fixed; right: 0; height: 100vh; top: 0"
-          src="https://mastofeed.com/apiv2/feed?userurl=https%3A%2F%2Ftheblower.au%2Fusers%2Fslesh&theme=light&size=100&header=false&replies=false&boosts=false"
-        ></iframe>
-      </div>
       <div id="column1">
         <ul class="sidebar">
           <li>
@@ -36,6 +26,9 @@
             />
             <h1>StewartHaines</h1>
             <h3>Kern like no-one's watching</h3>
+            <h3 style="display: none">
+              <a rel="me" href="https://theblower.au/@slesh">Mastodon</a>
+            </h3>
           </li>
 
           <li>
@@ -540,6 +533,16 @@ iPhone.</p-->
             </p>
           </li>
         </ul>
+      </div>
+      <div id="column2">
+        <iframe
+          allowfullscreen
+          sandbox="allow-top-navigation allow-scripts allow-popups allow-popups-to-escape-sandbox"
+          width="500"
+          height="100vh"
+          style="height: 100vh; position: fixed; right: 0; top: 0"
+          src="https://mastofeed.com/apiv2/feed?userurl=https%3A%2F%2Ftheblower.au%2Fusers%2Fslesh&theme=light&size=100&header=false&replies=false&boosts=false"
+        ></iframe>
       </div>
     </div>
     <p id="extracontact">contact: stewarthaines@gmail.com</p>
