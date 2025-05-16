@@ -12,16 +12,16 @@
 
   <entry>
     <id>urn:uuid:1f5399c7-0087-41bf-9336-5f1e9e963c98</id>
-    <title>Sample Book</title>
+    <title>Jet the Dog</title>
     <author>
-      <name>Book Author</name>
+      <name>Stewart and Javier</name>
     </author>
     <updated>2025-05-16T00:00:00Z</updated>
     <dc:language>en</dc:language>
     <dc:publisher>Sample Publisher</dc:publisher>
     <summary>A sample EPUB book.</summary>
     <link rel="http://opds-spec.org/acquisition"
-      href="https://drive.google.com/uc?export=download&id=1uDakT-mGiitJEH6nCZx_aSGRlfLagX0a"
+      href="https://drive.google.com/uc?export=download&amp;id=1uDakT-mGiitJEH6nCZx_aSGRlfLagX0a"
       type="application/epub+zip" />
   </entry>
 

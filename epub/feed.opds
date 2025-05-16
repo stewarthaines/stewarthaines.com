@@ -21,7 +21,7 @@
     <dc:publisher>Sample Publisher</dc:publisher>
     <summary>A sample EPUB book.</summary>
     <link rel="http://opds-spec.org/acquisition"
-      href="https://drive.google.com/uc?export=download&id=1uDakT-mGiitJEH6nCZx_aSGRlfLagX0a"
+      href="https://drive.google.com/uc?export=download&amp;id=1uDakT-mGiitJEH6nCZx_aSGRlfLagX0a"
       type="application/epub+zip" />
   </entry>
 
