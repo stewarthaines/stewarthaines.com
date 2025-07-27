@@ -1,0 +1,82 @@
+---
+pagination:
+  data: languages
+  size: 1
+  alias: lang
+permalink: "{{ '/' if lang.code == 'en' else '/' + lang.code + '/' }}epub/"
+layout: epub-base.njk
+---
+
+<div class="hero">
+  <p>{{ 'hero_description' | i18n }}</p>
+</div>
+
+<input type="radio" name="audience" id="authors" checked>
+<input type="radio" name="audience" id="designers">
+<input type="radio" name="audience" id="developers">
+
+<div class="audience-selector">
+  <label for="authors">{{ 'audience_authors' | i18n }}</label>
+  <label for="designers">{{ 'audience_designers' | i18n }}</label>
+  <label for="developers">{{ 'audience_developers' | i18n }}</label>
+</div>
+
+<div class="features">
+  <!-- Authors features -->
+  <div class="feature-set authors-features">
+    <div class="feature">
+      <h3>{{ 'feature_plain_text' | i18n }}</h3>
+      <p>{{ 'feature_plain_text_desc' | i18n }}</p>
+    </div>
+    
+    <div class="feature">
+      <h3>{{ 'feature_instant_epub' | i18n }}</h3>
+      <p>{{ 'feature_instant_epub_desc' | i18n }}</p>
+    </div>
+    
+    <div class="feature">
+      <h3>{{ 'feature_no_install' | i18n }}</h3>
+      <p>{{ 'feature_no_install_desc' | i18n }}</p>
+    </div>
+  </div>
+  
+  <!-- Designers features -->
+  <div class="feature-set designers-features">
+    <div class="feature">
+      <h3>{{ 'feature_live_preview' | i18n }}</h3>
+      <p>{{ 'feature_live_preview_desc' | i18n }}</p>
+    </div>
+    
+    <div class="feature">
+      <h3>{{ 'feature_responsive_design' | i18n }}</h3>
+      <p>{{ 'feature_responsive_design_desc' | i18n }}</p>
+    </div>
+    
+    <div class="feature">
+      <h3>{{ 'feature_visual_feedback' | i18n }}</h3>
+      <p>{{ 'feature_visual_feedback_desc' | i18n }}</p>
+    </div>
+  </div>
+  
+  <!-- Developers features -->
+  <div class="feature-set developers-features">
+    <div class="feature">
+      <h3>{{ 'feature_rapid_iteration' | i18n }}</h3>
+      <p>{{ 'feature_rapid_iteration_desc' | i18n }}</p>
+    </div>
+    
+    <div class="feature">
+      <h3>{{ 'feature_third_party' | i18n }}</h3>
+      <p>{{ 'feature_third_party_desc' | i18n }}</p>
+    </div>
+    
+    <div class="feature">
+      <h3>{{ 'feature_debugging' | i18n }}</h3>
+      <p>{{ 'feature_debugging_desc' | i18n }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="app-frame">
+  <iframe src="/epub/indexeddb/EDITME.html" title="{{ 'iframe_title' | i18n }}"></iframe>
+</div>

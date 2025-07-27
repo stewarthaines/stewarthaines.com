@@ -1,0 +1,106 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: src/epub.njk:29
+msgid "audience_authors"
+msgstr "Auteurs de Livres"
+
+#: src/epub.njk:30
+msgid "audience_designers"
+msgstr "Concepteurs de Livres"
+
+#: src/epub.njk:31
+msgid "audience_developers"
+msgstr "Développeurs de Livres"
+
+#: src/epub.njk:84
+msgid "feature_debugging"
+msgstr "Débogage en Navigateur"
+
+#: src/epub.njk:85
+msgid "feature_debugging_desc"
+msgstr "Utilisez des outils de développement familiers pour déboguer les scripts et l'optimisation des performances."
+
+#: src/epub.njk:43
+msgid "feature_instant_epub"
+msgstr "EPUB Instantané"
+
+#: src/epub.njk:44
+msgid "feature_instant_epub_desc"
+msgstr "Générez instantanément des fichiers EPUB 3.2 valides avec une structure et des métadonnées appropriées."
+
+#: src/epub.njk:56
+msgid "feature_live_preview"
+msgstr "Aperçu en Direct"
+
+#: src/epub.njk:57
+msgid "feature_live_preview_desc"
+msgstr "Voyez les changements de mise en page en temps réel sur différents écrans et orientations d'appareils."
+
+#: src/epub.njk:48
+msgid "feature_no_install"
+msgstr "Aucune Installation"
+
+#: src/epub.njk:49
+msgid "feature_no_install_desc"
+msgstr "Outil basé sur navigateur qui fonctionne hors ligne. Aucun logiciel à télécharger ou installer."
+
+#: src/epub.njk:38
+msgid "feature_plain_text"
+msgstr "Saisie de Texte Brut"
+
+#: src/epub.njk:39
+msgid "feature_plain_text_desc"
+msgstr "Rédigez votre contenu en format texte brut simple. Aucun balisage complexe requis."
+
+#: src/epub.njk:74
+msgid "feature_rapid_iteration"
+msgstr "Itération Rapide"
+
+#: src/epub.njk:75
+msgid "feature_rapid_iteration_desc"
+msgstr "Test rapide de comportements JavaScript personnalisés et d'éléments interactifs."
+
+#: src/epub.njk:61
+msgid "feature_responsive_design"
+msgstr "Test de Design Réactif"
+
+#: src/epub.njk:62
+msgid "feature_responsive_design_desc"
+msgstr "Testez la typographie, les marges et les mises en page sur mobile, tablette et bureau instantanément."
+
+#: src/epub.njk:79
+msgid "feature_third_party"
+msgstr "Intégration Tierce"
+
+#: src/epub.njk:80
+msgid "feature_third_party_desc"
+msgstr "Testez des bibliothèques externes, des analyses et des scripts personnalisés dans l'environnement EPUB."
+
+#: src/epub.njk:66
+msgid "feature_visual_feedback"
+msgstr "Retour Visuel"
+
+#: src/epub.njk:67
+msgid "feature_visual_feedback_desc"
+msgstr "Retour visuel immédiat pour la conception de couverture, les sauts de chapitre et les choix de formatage."
+
+#: src/epub.njk:11
+msgid "hero_description"
+msgstr "Convertir du texte brut en EPUB - le moyen le plus simple de créer des fichiers EPUB"
+
+#: src/epub.njk:91
+msgid "iframe_title"
+msgstr "EDITME.html - Outil de Création EPUB"
+
+#: src/_includes/epub-base.njk:167 src/_includes/epub-base.njk:6
+msgid "page_title"
+msgstr "EDITME.html"

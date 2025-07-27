@@ -1,0 +1,100 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#: src/epub.njk:29
+msgid "audience_authors"
+msgstr ""
+
+#: src/epub.njk:30
+msgid "audience_designers"
+msgstr ""
+
+#: src/epub.njk:31
+msgid "audience_developers"
+msgstr ""
+
+#: src/epub.njk:84
+msgid "feature_debugging"
+msgstr ""
+
+#: src/epub.njk:85
+msgid "feature_debugging_desc"
+msgstr ""
+
+#: src/epub.njk:43
+msgid "feature_instant_epub"
+msgstr ""
+
+#: src/epub.njk:44
+msgid "feature_instant_epub_desc"
+msgstr ""
+
+#: src/epub.njk:56
+msgid "feature_live_preview"
+msgstr ""
+
+#: src/epub.njk:57
+msgid "feature_live_preview_desc"
+msgstr ""
+
+#: src/epub.njk:48
+msgid "feature_no_install"
+msgstr ""
+
+#: src/epub.njk:49
+msgid "feature_no_install_desc"
+msgstr ""
+
+#: src/epub.njk:38
+msgid "feature_plain_text"
+msgstr ""
+
+#: src/epub.njk:39
+msgid "feature_plain_text_desc"
+msgstr ""
+
+#: src/epub.njk:74
+msgid "feature_rapid_iteration"
+msgstr ""
+
+#: src/epub.njk:75
+msgid "feature_rapid_iteration_desc"
+msgstr ""
+
+#: src/epub.njk:61
+msgid "feature_responsive_design"
+msgstr ""
+
+#: src/epub.njk:62
+msgid "feature_responsive_design_desc"
+msgstr ""
+
+#: src/epub.njk:79
+msgid "feature_third_party"
+msgstr ""
+
+#: src/epub.njk:80
+msgid "feature_third_party_desc"
+msgstr ""
+
+#: src/epub.njk:66
+msgid "feature_visual_feedback"
+msgstr ""
+
+#: src/epub.njk:67
+msgid "feature_visual_feedback_desc"
+msgstr ""
+
+#: src/epub.njk:11
+msgid "hero_description"
+msgstr ""
+
+#: src/epub.njk:91
+msgid "iframe_title"
+msgstr ""
+
+#: src/_includes/epub-base.njk:167
+#: src/_includes/epub-base.njk:6
+msgid "page_title"
+msgstr ""
