@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
 "Project-Id-Version: PACKAGE VERSION\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -27,7 +27,9 @@ msgstr "Browser-basiertes Debugging"
 
 #: src/epub.njk:85
 msgid "feature_debugging_desc"
-msgstr "Verwenden Sie vertraute Entwicklertools zum Debuggen von Skripten und zur Leistungsoptimierung."
+msgstr ""
+"Verwenden Sie vertraute Entwicklertools zum Debuggen von Skripten und zur "
+"Leistungsoptimierung."
 
 #: src/epub.njk:43
 msgid "feature_instant_epub"
@@ -35,7 +37,9 @@ msgstr "Sofort-EPUB"
 
 #: src/epub.njk:44
 msgid "feature_instant_epub_desc"
-msgstr "Erstellen Sie sofort gültige EPUB 3.2-Dateien mit ordnungsgemäßer Struktur und Metadaten."
+msgstr ""
+"Erstellen Sie sofort gültige EPUB 3.2-Dateien mit ordnungsgemäßer Struktur "
+"und Metadaten."
 
 #: src/epub.njk:56
 msgid "feature_live_preview"
@@ -43,7 +47,9 @@ msgstr "Live-Layout-Vorschau"
 
 #: src/epub.njk:57
 msgid "feature_live_preview_desc"
-msgstr "Sehen Sie Layout-Änderungen in Echtzeit auf verschiedenen Gerätebildschirmen und Ausrichtungen."
+msgstr ""
+"Sehen Sie Layout-Änderungen in Echtzeit auf verschiedenen Gerätebildschirmen "
+"und Ausrichtungen."
 
 #: src/epub.njk:48
 msgid "feature_no_install"
@@ -51,7 +57,9 @@ msgstr "Keine Installation"
 
 #: src/epub.njk:49
 msgid "feature_no_install_desc"
-msgstr "Browser-basiertes Tool, das offline funktioniert. Keine Software zum Herunterladen oder Installieren."
+msgstr ""
+"Browser-basiertes Tool, das offline funktioniert. Keine Software zum "
+"Herunterladen oder Installieren."
 
 #: src/epub.njk:38
 msgid "feature_plain_text"
@@ -59,7 +67,9 @@ msgstr "Einfacher Text"
 
 #: src/epub.njk:39
 msgid "feature_plain_text_desc"
-msgstr "Schreiben Sie Ihren Inhalt im einfachen Textformat. Keine komplexe Auszeichnung erforderlich."
+msgstr ""
+"Schreiben Sie Ihren Inhalt im einfachen Textformat. Keine komplexe "
+"Auszeichnung erforderlich."
 
 #: src/epub.njk:74
 msgid "feature_rapid_iteration"
@@ -67,7 +77,9 @@ msgstr "Schnelle Iteration"
 
 #: src/epub.njk:75
 msgid "feature_rapid_iteration_desc"
-msgstr "Schnelles Testen von benutzerdefinierten JavaScript-Verhalten und interaktiven Elementen."
+msgstr ""
+"Schnelles Testen von benutzerdefinierten JavaScript-Verhalten und "
+"interaktiven Elementen."
 
 #: src/epub.njk:61
 msgid "feature_responsive_design"
@@ -75,7 +87,9 @@ msgstr "Responsive Design-Tests"
 
 #: src/epub.njk:62
 msgid "feature_responsive_design_desc"
-msgstr "Testen Sie Typografie, Ränder und Layouts auf Mobilgeräten, Tablets und Desktop sofort."
+msgstr ""
+"Testen Sie Typografie, Ränder und Layouts auf Mobilgeräten, Tablets und "
+"Desktop sofort."
 
 #: src/epub.njk:79
 msgid "feature_third_party"
@@ -83,7 +97,9 @@ msgstr "Drittanbieter-Integration"
 
 #: src/epub.njk:80
 msgid "feature_third_party_desc"
-msgstr "Testen Sie externe Bibliotheken, Analytik und benutzerdefinierte Skripte in der EPUB-Umgebung."
+msgstr ""
+"Testen Sie externe Bibliotheken, Analytik und benutzerdefinierte Skripte in "
+"der EPUB-Umgebung."
 
 #: src/epub.njk:66
 msgid "feature_visual_feedback"
@@ -91,11 +107,15 @@ msgstr "Visuelles Feedback"
 
 #: src/epub.njk:67
 msgid "feature_visual_feedback_desc"
-msgstr "Sofortiges visuelles Feedback für Cover-Design, Kapitelumbrüche und Formatierungsoptionen."
+msgstr ""
+"Sofortiges visuelles Feedback für Cover-Design, Kapitelumbrüche und "
+"Formatierungsoptionen."
 
 #: src/epub.njk:11
 msgid "hero_description"
-msgstr "Einfachen Text in EPUB umwandeln - der einfachste Weg, EPUB-Dateien zu erstellen"
+msgstr ""
+"Einfachen Text in EPUB umwandeln - der einfachste Weg, EPUB-Dateien zu "
+"erstellen"
 
 #: src/epub.njk:91
 msgid "iframe_title"
@@ -104,3 +124,49 @@ msgstr "EDITME.html - EPUB-Erstellungstool"
 #: src/_includes/epub-base.njk:167 src/_includes/epub-base.njk:6
 msgid "page_title"
 msgstr "EDITME.html"
+
+#: src/epub.njk:15
+msgid "choose_role_legend"
+msgstr "Wählen Sie Ihre Rolle, um relevante Funktionen zu sehen"
+
+#: src/_includes/epub-base.njk:228
+msgid "current"
+msgstr "aktuell"
+
+#: src/epub.njk:34
+msgid "feature_details_heading"
+msgstr "Funktionsdetails"
+
+#: src/epub.njk:91
+msgid "interactive_epub_tool_heading"
+msgstr "Interaktives EPUB-Erstellungstool"
+
+#: src/_includes/epub-base.njk:223
+msgid "language_selection"
+msgstr "Sprachauswahl"
+
+#: src/_includes/epub-base.njk:7
+msgid "meta_description"
+msgstr ""
+"Klartext in EPUB konvertieren - der einfachste Weg, EPUB-Dateien zu erstellen"
+
+#: src/epub.njk:94
+msgid "open_tool_new_window"
+msgstr "EPUB-Tool in neuem Fenster öffnen"
+
+#: src/epub.njk:95
+msgid "opens_new_tab"
+msgstr "öffnet in neuem Tab"
+
+# Accessibility strings
+#: src/_includes/epub-base.njk:218
+msgid "skip_to_main"
+msgstr "Zum Hauptinhalt springen"
+
+#: src/_includes/epub-base.njk:228
+msgid "version"
+msgstr "Version"
+
+#: src/epub.njk:22 src/epub.njk:25 src/epub.njk:28
+msgid "view_features_for"
+msgstr "Funktionen anzeigen für"

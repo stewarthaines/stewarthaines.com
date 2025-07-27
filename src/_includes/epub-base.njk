@@ -1,12 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ lang.code or 'en' }}">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ 'page_title' | i18n }}</title>
-    <meta name="description" content="Convert plain text to EPUB - the simplest way to create EPUB files">
+    <meta name="description" content="{{ 'meta_description' | i18n }}">
     <link rel="icon" href="/stewarthaines.ico">
+    <link rel="stylesheet" href="/sh2.css">
+    <script>
+      // Automatic locale detection and redirect
+      (function () {
+        try { // Skip if user has previously selected a language
+          const savedLocale = localStorage.getItem('user-selected-locale');
+          if (savedLocale) 
+            return;
+          
+          // Skip if URL has fragments or query parameters (shared links)
+          if (window.location.hash || window.location.search) 
+            return;
+          
+          // Get browser locale and current page locale
+          const browserLocale = navigator.language.slice(0, 2);
+          const supportedLocales = ['en', 'es', 'fr', 'de'];
+          // Determine current locale from URL path
+          const path = window.location.pathname;
+          let currentLocale = 'en'; // default
+          const pathMatch = path.match(/^\/([a-z]{2})\//);
+          if (pathMatch && supportedLocales.includes(pathMatch[1])) {
+            currentLocale = pathMatch[1];
+          }
+          // Redirect if browser locale is supported and different
+          if (supportedLocales.includes(browserLocale) && browserLocale !== currentLocale) {
+            let newPath = path;
+            if (currentLocale === 'en') { // Add locale prefix to English path
+              newPath = '/' + browserLocale + path;
+            } else { // Replace existing locale prefix
+              newPath = path.replace(/^\/[a-z]{2}\//, '/' + browserLocale + '/');
+            }
+            window.location.href = newPath;
+          }
+        } catch (e) { // Fail silently if localStorage or other features unavailable
+        }
+      })();
+    </script>
     <style>
+      :root {
+        /* WCAG AA compliant colors */
+        --color-primary-accessible: #0056b3; /* 5.1:1 contrast with white */
+        --color-primary-hover: #004085;
+        --color-neutral-bg: #f8f9fa;
+        --color-neutral-border: #dee2e6;
+        --color-neutral-hover: #e9ecef;
+        --color-text-muted: #495057;
+        --color-focus: #005fcc;
+        --color-focus-shadow: rgba(0, 95, 204, 0.2);
+      }
+      
       * {
         margin: 0;
         padding: 0;
@@ -49,6 +98,7 @@
         font-size: 1.25rem;
         color: #666;
         margin: 0 auto;
+        text-align: center;
       }
       .features {
         display: grid;
@@ -79,9 +129,17 @@
         border: none;
         display: block;
       }
-      /* Hide radio inputs */
+      /* Visually hide radio inputs but keep in tab sequence */
       input[name="audience"] {
-        display: none;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
       }
       /* Audience Selector Styles */
       .audience-selector {
@@ -93,34 +151,42 @@
       }
       .audience-selector label {
         padding: 0.75rem 1.5rem;
-        background: #f8f9fa;
-        border: 2px solid #e9ecef;
+        background: var(--color-neutral-bg);
+        border: 2px solid var(--color-neutral-hover);
         border-radius: 6px;
         cursor: pointer;
         transition: all 0.2s ease;
         font-weight: 500;
-        color: #495057;
+        color: var(--color-text-muted);
       }
       .audience-selector label:hover {
-        background: #e9ecef;
-        border-color: #dee2e6;
+        background: var(--color-neutral-hover);
+        border-color: var(--color-neutral-border);
       }
       /* Show selected state */
-      #authors:checked ~ .audience-selector label[for="authors"],
-      #designers:checked ~ .audience-selector label[for="designers"],
-      #developers:checked ~ .audience-selector label[for="developers"] {
-        background: #007bff;
-        border-color: #007bff;
+      #authors:checked ~ .audience-selector-fieldset .audience-selector label[for="authors"],
+      #designers:checked ~ .audience-selector-fieldset .audience-selector label[for="designers"],
+      #developers:checked ~ .audience-selector-fieldset .audience-selector label[for="developers"] {
+        background: var(--color-primary-accessible);
+        border-color: var(--color-primary-accessible);
         color: white;
+      }
+      /* Show focus state for radio buttons */
+      #authors:focus ~ .audience-selector-fieldset .audience-selector label[for="authors"],
+      #designers:focus ~ .audience-selector-fieldset .audience-selector label[for="designers"],
+      #developers:focus ~ .audience-selector-fieldset .audience-selector label[for="developers"] {
+        outline: 3px solid var(--color-focus);
+        outline-offset: 2px;
+        box-shadow: 0 0 0 6px var(--color-focus-shadow);
       }
       /* Feature Set Visibility Logic */
       .feature-set {
         display: none;
       }
       /* Show appropriate feature set based on checked radio */
-      #authors:checked ~ .features .authors-features,
-      #designers:checked ~ .features .designers-features,
-      #developers:checked ~ .features .developers-features {
+      #authors:checked ~ .audience-selector-fieldset ~ .features .authors-features,
+      #designers:checked ~ .audience-selector-fieldset ~ .features .designers-features,
+      #developers:checked ~ .audience-selector-fieldset ~ .features .developers-features {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
@@ -132,11 +198,11 @@
       }
       .language-switcher a {
         padding: 0.375rem 0.5rem;
-        background: #f8f9fa;
-        border: 1px solid #dee2e6;
+        background: var(--color-neutral-bg);
+        border: 1px solid var(--color-neutral-border);
         border-radius: 3px;
         text-decoration: none;
-        color: #495057;
+        color: var(--color-text-muted);
         font-weight: 500;
         font-size: 0.75rem;
         transition: all 0.2s ease;
@@ -144,12 +210,12 @@
         text-align: center;
       }
       .language-switcher a:hover {
-        background: #e9ecef;
+        background: var(--color-neutral-hover);
         border-color: #adb5bd;
       }
       .language-switcher a[aria-current="page"] {
-        background: #007bff;
-        border-color: #007bff;
+        background: var(--color-primary-accessible);
+        border-color: var(--color-primary-accessible);
         color: white;
       }
       @media(max-width: 768px) {
@@ -174,21 +240,24 @@
     </style>
   </head>
   <body>
+    <a href="#main" class="skip-link">{{ 'skip_to_main' | i18n }}</a>
     <header>
       <div class="container">
         <div class="header-content">
           <h1>{{ 'page_title' | i18n }}</h1>
-          <div class="language-switcher">
-            {% for language in languages %}
-              <a href="{{ '/' if language.code == 'en' else '/' + language.code + '/' }}epub/" {% if language.code == lang.code %} aria-current="page" {% endif %}>
-                {{ language.code | upper }}
-              </a>
-            {% endfor %}
-          </div>
+          <nav aria-label="{{ 'language_selection' | i18n }}">
+            <div class="language-switcher">
+              {% for language in languages %}
+                <a href="{{ '/' if language.code == 'en' else '/' + language.code + '/' }}epub/" {% if language.code == lang.code %} aria-current="page" {% endif %} aria-label="{{ language.name }} {% if language.code == lang.code %}({{ 'current' | i18n }}){% else %}({{ language.name }} {{ 'version' | i18n }}){% endif %}" lang="{{ language.code }}" onclick="localStorage.setItem('user-selected-locale', '{{ language.code }}')">
+                  {{ language.code | upper }}
+                </a>
+              {% endfor %}
+            </div>
+          </nav>
         </div>
       </div>
     </header>
-    <main>
+    <main id="main">
       <div class="container">
         {{ content | safe }}
       </div>

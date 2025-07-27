@@ -48,6 +48,67 @@ a:link, a:visited {
   background: transparent; 
 }
 
+/* Accessibility utilities - from docs/accessibility.md */
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Enhanced focus indicators (required) */
+*:focus {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+}
+
+/* Skip link pattern */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 1000;
+  text-decoration: none;
+  border-radius: 0 0 4px 4px;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Audience selector fieldset styling */
+.audience-selector-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.audience-selector-fieldset legend {
+  position: absolute;
+  left: -9999px; /* Visually hidden but available to screen readers */
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 a:hover {
   text-decoration : underline;
   color: #F68E56;

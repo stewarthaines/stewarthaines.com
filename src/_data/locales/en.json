@@ -22,5 +22,16 @@
   "feature_visual_feedback_desc": "Immediate visual feedback for cover design, chapter breaks, and formatting choices.",
   "hero_description": "Convert plain text to EPUB - the simplest way to create EPUB files",
   "iframe_title": "EDITME.html - EPUB Creation Tool",
-  "page_title": "EDITME.html"
+  "page_title": "EDITME.html",
+  "choose_role_legend": "Choose your role to see relevant features",
+  "current": "current",
+  "feature_details_heading": "Feature Details",
+  "interactive_epub_tool_heading": "Interactive EPUB Creation Tool",
+  "language_selection": "Language selection",
+  "meta_description": "Convert plain text to EPUB - the simplest way to create EPUB files",
+  "open_tool_new_window": "Open EPUB tool in new window",
+  "opens_new_tab": "opens in new tab",
+  "skip_to_main": "Skip to main content",
+  "version": "version",
+  "view_features_for": "View features for"
 }

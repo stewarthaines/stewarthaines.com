@@ -22,5 +22,16 @@
   "feature_visual_feedback_desc": "Sofortiges visuelles Feedback für Cover-Design, Kapitelumbrüche und Formatierungsoptionen.",
   "hero_description": "Einfachen Text in EPUB umwandeln - der einfachste Weg, EPUB-Dateien zu erstellen",
   "iframe_title": "EDITME.html - EPUB-Erstellungstool",
-  "page_title": "EDITME.html"
+  "page_title": "EDITME.html",
+  "choose_role_legend": "Wählen Sie Ihre Rolle, um relevante Funktionen zu sehen",
+  "current": "aktuell",
+  "feature_details_heading": "Funktionsdetails",
+  "interactive_epub_tool_heading": "Interaktives EPUB-Erstellungstool",
+  "language_selection": "Sprachauswahl",
+  "meta_description": "Klartext in EPUB konvertieren - der einfachste Weg, EPUB-Dateien zu erstellen",
+  "open_tool_new_window": "EPUB-Tool in neuem Fenster öffnen",
+  "opens_new_tab": "öffnet in neuem Tab",
+  "skip_to_main": "Zum Hauptinhalt springen",
+  "version": "Version",
+  "view_features_for": "Funktionen anzeigen für"
 }

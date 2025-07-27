@@ -22,5 +22,16 @@
   "feature_visual_feedback_desc": "Retroalimentación visual inmediata para diseño de portada, saltos de capítulo y elecciones de formato.",
   "hero_description": "Convierte texto plano a EPUB - la forma más simple de crear archivos EPUB",
   "iframe_title": "EDITME.html - Herramienta de Creación EPUB",
-  "page_title": "EDITME.html"
+  "page_title": "EDITME.html",
+  "choose_role_legend": "Elige tu función para ver características relevantes",
+  "current": "actual",
+  "feature_details_heading": "Detalles de Características",
+  "interactive_epub_tool_heading": "Herramienta Interactiva de Creación EPUB",
+  "language_selection": "Selección de idioma",
+  "meta_description": "Convierte texto plano a EPUB - la forma más simple de crear archivos EPUB",
+  "open_tool_new_window": "Abrir herramienta EPUB en nueva ventana",
+  "opens_new_tab": "se abre en nueva pestaña",
+  "skip_to_main": "Saltar al contenido principal",
+  "version": "versión",
+  "view_features_for": "Ver características para"
 }

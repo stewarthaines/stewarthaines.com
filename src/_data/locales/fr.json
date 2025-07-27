@@ -22,5 +22,16 @@
   "feature_visual_feedback_desc": "Retour visuel immédiat pour la conception de couverture, les sauts de chapitre et les choix de formatage.",
   "hero_description": "Convertir du texte brut en EPUB - le moyen le plus simple de créer des fichiers EPUB",
   "iframe_title": "EDITME.html - Outil de Création EPUB",
-  "page_title": "EDITME.html"
+  "page_title": "EDITME.html",
+  "choose_role_legend": "Choisissez votre rôle pour voir les fonctionnalités pertinentes",
+  "current": "actuel",
+  "feature_details_heading": "Détails des Fonctionnalités",
+  "interactive_epub_tool_heading": "Outil Interactif de Création EPUB",
+  "language_selection": "Sélection de langue",
+  "meta_description": "Convertir du texte brut en EPUB - la façon la plus simple de créer des fichiers EPUB",
+  "open_tool_new_window": "Ouvrir l'outil EPUB dans une nouvelle fenêtre",
+  "opens_new_tab": "s'ouvre dans un nouvel onglet",
+  "skip_to_main": "Aller au contenu principal",
+  "version": "version",
+  "view_features_for": "Voir les fonctionnalités pour"
 }

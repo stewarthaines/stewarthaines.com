@@ -98,3 +98,49 @@ msgstr ""
 #: src/_includes/epub-base.njk:6
 msgid "page_title"
 msgstr ""
+
+#: src/epub.njk:15
+msgid "choose_role_legend"
+msgstr ""
+
+#: src/_includes/epub-base.njk:228
+msgid "current"
+msgstr ""
+
+#: src/epub.njk:34
+msgid "feature_details_heading"
+msgstr ""
+
+#: src/epub.njk:91
+msgid "interactive_epub_tool_heading"
+msgstr ""
+
+#: src/_includes/epub-base.njk:223
+msgid "language_selection"
+msgstr ""
+
+#: src/_includes/epub-base.njk:7
+msgid "meta_description"
+msgstr ""
+
+#: src/epub.njk:94
+msgid "open_tool_new_window"
+msgstr ""
+
+#: src/epub.njk:95
+msgid "opens_new_tab"
+msgstr ""
+
+#: src/_includes/epub-base.njk:218
+msgid "skip_to_main"
+msgstr ""
+
+#: src/_includes/epub-base.njk:228
+msgid "version"
+msgstr ""
+
+#: src/epub.njk:22
+#: src/epub.njk:25
+#: src/epub.njk:28
+msgid "view_features_for"
+msgstr ""
