@@ -33,5 +33,9 @@
   "opens_new_tab": "öffnet in neuem Tab",
   "skip_to_main": "Zum Hauptinhalt springen",
   "version": "Version",
-  "view_features_for": "Funktionen anzeigen für"
+  "view_features_for": "Funktionen anzeigen für",
+  "audience_writers": "Buchdesigner",
+  "sample_files_heading": "Funktionsdetails",
+  "sample_responsive_layout_desc": "Testen Sie Typografie, Ränder und Layouts auf Mobilgeräten, Tablets und Desktop sofort.",
+  "license_heading": "Funktionsdetails"
 }

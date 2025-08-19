@@ -33,5 +33,9 @@
   "opens_new_tab": "s'ouvre dans un nouvel onglet",
   "skip_to_main": "Aller au contenu principal",
   "version": "version",
-  "view_features_for": "Voir les fonctionnalités pour"
+  "view_features_for": "Voir les fonctionnalités pour",
+  "audience_writers": "Concepteurs de Livres",
+  "sample_files_heading": "Détails des Fonctionnalités",
+  "sample_responsive_layout_desc": "Testez la typographie, les marges et les mises en page sur mobile, tablette et bureau instantanément.",
+  "license_heading": "Détails des Fonctionnalités"
 }

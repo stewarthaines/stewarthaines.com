@@ -33,5 +33,9 @@
   "opens_new_tab": "se abre en nueva pestaña",
   "skip_to_main": "Saltar al contenido principal",
   "version": "versión",
-  "view_features_for": "Ver características para"
+  "view_features_for": "Ver características para",
+  "audience_writers": "Diseñadores de Libros",
+  "sample_files_heading": "Detalles de Características",
+  "sample_responsive_layout_desc": "Prueba tipografía, márgenes y diseños en móvil, tablet y escritorio al instante.",
+  "license_heading": "Detalles de Características"
 }

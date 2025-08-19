@@ -15,11 +15,11 @@ msgstr "Book Authors"
 
 #: src/epub.njk:30
 msgid "audience_designers"
-msgstr "Book Designers"
+msgstr "For Designers"
 
 #: src/epub.njk:31
 msgid "audience_developers"
-msgstr "Book Developers"
+msgstr "For Developers"
 
 #: src/epub.njk:84
 msgid "feature_debugging"
@@ -28,17 +28,18 @@ msgstr "Browser-Based Debugging"
 #: src/epub.njk:85
 msgid "feature_debugging_desc"
 msgstr ""
-"Use familiar developer tools for debugging scripts and performance "
-"optimization."
+"Use familiar developer tools for debugging and performance "
+"evaluation."
 
 #: src/epub.njk:43
 msgid "feature_instant_epub"
-msgstr "Instant EPUB"
+msgstr "Valid EPUB"
 
 #: src/epub.njk:44
 msgid "feature_instant_epub_desc"
 msgstr ""
-"Generate valid EPUB 3.2 files instantly with proper structure and metadata."
+"Generate valid EPUB 3.2 files instantly with proper structure and metadata "
+"for accessibility."
 
 #: src/epub.njk:56
 msgid "feature_live_preview"
@@ -57,7 +58,8 @@ msgstr "No Installation"
 #: src/epub.njk:49
 msgid "feature_no_install_desc"
 msgstr ""
-"Browser-based tool that works offline. No software to download or install."
+"Browser-based tool that works offline as well. No software to "
+"install."
 
 #: src/epub.njk:38
 msgid "feature_plain_text"
@@ -74,27 +76,28 @@ msgstr "Rapid Iteration"
 
 #: src/epub.njk:75
 msgid "feature_rapid_iteration_desc"
-msgstr "Quick testing of custom JavaScript behaviors and interactive elements."
+msgstr ""
+"Avoid device round trips when testing responsive and interactive behaviours."
 
 #: src/epub.njk:61
 msgid "feature_responsive_design"
-msgstr "Responsive Design Testing"
+msgstr "Responsive Design"
 
 #: src/epub.njk:62
 msgid "feature_responsive_design_desc"
 msgstr ""
-"Test typography, margins, and layouts on mobile, tablet, and desktop "
-"instantly."
+"Test typography, margins, and layouts on mobile, tablet, and desktop screen "
+"sizes instantly."
 
 #: src/epub.njk:79
 msgid "feature_third_party"
-msgstr "Third-Party Integration"
+msgstr "Integrated Scripting"
 
 #: src/epub.njk:80
 msgid "feature_third_party_desc"
 msgstr ""
-"Test external libraries, analytics, and custom scripts within the EPUB "
-"environment."
+"Add extension libraries, custom build-time scripts and Reading System "
+"scripts."
 
 #: src/epub.njk:66
 msgid "feature_visual_feedback"
@@ -108,7 +111,7 @@ msgstr ""
 
 #: src/epub.njk:11
 msgid "hero_description"
-msgstr "Convert plain text to EPUB - the simplest way to create EPUB files"
+msgstr "The Simplest way to create Semantic, Scripted EPUB books"
 
 #: src/epub.njk:91
 msgid "iframe_title"
@@ -162,3 +165,88 @@ msgstr "version"
 #: src/epub.njk:22 src/epub.njk:25 src/epub.njk:28
 msgid "view_features_for"
 msgstr "View features for"
+
+#: src/epub.njk:19
+msgid "audience_writers"
+msgstr "For Writers"
+
+#: src/epub.njk:110
+msgid "sample_advanced_metadata"
+msgstr ""
+
+#: src/epub.njk:110
+msgid "sample_advanced_metadata_desc"
+msgstr "Complex metadata and structure examples"
+
+#: src/epub.njk:88
+msgid "sample_files_heading"
+msgstr "These samples will open in the app below"
+
+#: src/epub.njk:109
+msgid "sample_interactive_features"
+msgstr ""
+
+#: src/epub.njk:109
+msgid "sample_interactive_features_desc"
+msgstr "JavaScript and interactive element examples"
+
+#: src/epub.njk:94
+msgid "sample_poetry_collection"
+msgstr ""
+
+#: src/epub.njk:94
+msgid "sample_poetry_collection_desc"
+msgstr "Poetry and verse formatting examples"
+
+#: src/epub.njk:102
+msgid "sample_responsive_layout"
+msgstr ""
+
+#: src/epub.njk:102
+msgid "sample_responsive_layout_desc"
+msgstr "Multi-device layout and responsive design examples"
+
+#: src/epub.njk:93
+msgid "sample_simple_novel"
+msgstr ""
+
+#: src/epub.njk:93
+msgid "sample_simple_novel_desc"
+msgstr "Basic fiction formatting example"
+
+#: src/epub.njk:101
+msgid "sample_typography_showcase"
+msgstr ""
+
+#: src/epub.njk:101
+msgid "sample_typography_showcase_desc"
+msgstr "Advanced typography and styling examples"
+
+#: src/_includes/epub-base.njk:51
+msgid "subtitle_scripted"
+msgstr "Scripted EPUB Editor"
+
+#: src/_includes/epub-base.njk:49 src/epub.njk:33
+msgid "subtitle_simple"
+msgstr "Simple EPUB Editor"
+
+#: src/_includes/epub-base.njk:50
+#, fuzzy
+msgid "subtitle_structured"
+msgstr "Scripted EPUB Editor"
+
+#: src/_includes/epub-base.njk:49
+msgid "subtitle_semantic"
+msgstr "Semantic EPUB Editor"
+
+#: src/epub.njk:125
+msgid "toggle_fullscreen"
+msgstr ""
+
+#: src/epub.njk:133
+msgid "download_seed_button"
+msgstr "Download SEED.html"
+
+#: src/epub.njk:131
+msgid "license_heading"
+msgstr "License"

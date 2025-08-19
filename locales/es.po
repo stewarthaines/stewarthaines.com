@@ -169,3 +169,93 @@ msgstr "versión"
 #: src/epub.njk:22 src/epub.njk:25 src/epub.njk:28
 msgid "view_features_for"
 msgstr "Ver características para"
+
+#: src/epub.njk:19
+#, fuzzy
+msgid "audience_writers"
+msgstr "Diseñadores de Libros"
+
+#: src/epub.njk:110
+msgid "sample_advanced_metadata"
+msgstr ""
+
+#: src/epub.njk:110
+msgid "sample_advanced_metadata_desc"
+msgstr ""
+
+#: src/epub.njk:88
+#, fuzzy
+msgid "sample_files_heading"
+msgstr "Detalles de Características"
+
+#: src/epub.njk:109
+msgid "sample_interactive_features"
+msgstr ""
+
+#: src/epub.njk:109
+msgid "sample_interactive_features_desc"
+msgstr ""
+
+#: src/epub.njk:94
+msgid "sample_poetry_collection"
+msgstr ""
+
+#: src/epub.njk:94
+msgid "sample_poetry_collection_desc"
+msgstr ""
+
+#: src/epub.njk:102
+msgid "sample_responsive_layout"
+msgstr ""
+
+#: src/epub.njk:102
+#, fuzzy
+msgid "sample_responsive_layout_desc"
+msgstr ""
+"Prueba tipografía, márgenes y diseños en móvil, tablet y escritorio al "
+"instante."
+
+#: src/epub.njk:93
+msgid "sample_simple_novel"
+msgstr ""
+
+#: src/epub.njk:93
+msgid "sample_simple_novel_desc"
+msgstr ""
+
+#: src/epub.njk:101
+msgid "sample_typography_showcase"
+msgstr ""
+
+#: src/epub.njk:101
+msgid "sample_typography_showcase_desc"
+msgstr ""
+
+#: src/_includes/epub-base.njk:51
+msgid "subtitle_scripted"
+msgstr ""
+
+#: src/_includes/epub-base.njk:49 src/epub.njk:33
+msgid "subtitle_simple"
+msgstr ""
+
+#: src/_includes/epub-base.njk:50
+msgid "subtitle_structured"
+msgstr ""
+
+#: src/_includes/epub-base.njk:49
+msgid "subtitle_semantic"
+msgstr ""
+
+#: src/epub.njk:125
+msgid "toggle_fullscreen"
+msgstr ""
+
+#: src/epub.njk:133
+msgid "download_seed_button"
+msgstr ""
+
+#: src/epub.njk:131
+#, fuzzy
+msgid "license_heading"
+msgstr "Detalles de Características"
