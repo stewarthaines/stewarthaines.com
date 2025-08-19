@@ -1,0 +1,713 @@
+/* SEED.html - EPUB Editor Styles */
+
+/* CSS Variables for WCAG AA compliant colors */
+:root {
+  /* WCAG AA compliant colors */
+  --color-primary-accessible: #0056b3; /* 5.1:1 contrast with white */
+  --color-primary-hover: #004085;
+  --color-neutral-bg: #f8f9fa;
+  --color-neutral-border: #dee2e6;
+  --color-neutral-hover: #e9ecef;
+  --color-text-muted: #495057;
+  --color-focus: #005fcc;
+  --color-focus-shadow: rgba(0, 95, 204, 0.2);
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Accessibility utilities - from sh2.css */
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Enhanced focus indicators (required) */
+*:focus {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+}
+
+/* Skip link pattern */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 1000;
+  text-decoration: none;
+  border-radius: 0 0 4px 4px;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Audience selector fieldset styling */
+.audience-selector-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.audience-selector-fieldset legend {
+  position: absolute;
+  left: -9999px; /* Visually hidden but available to screen readers */
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Header and Layout */
+header {
+  padding: 2rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.header-description {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+main {
+  padding: 2rem 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: #666;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Features Grid */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature {
+  padding: 1.5rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.feature h3 {
+  margin-bottom: 1rem;
+  margin-top: 0;
+  color: #333;
+}
+
+/* App Frame */
+.app-frame {
+  margin: 3rem 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.app-frame iframe {
+  width: 100%;
+  height: 75vw;
+  max-height: 600px;
+  border: none;
+  display: block;
+}
+
+.app-frame-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.fullscreen-toggle {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--color-neutral-border);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.fullscreen-toggle:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: var(--color-primary-accessible);
+}
+
+.fullscreen-toggle:focus {
+  outline: 3px solid var(--color-focus);
+  outline-offset: -3px;
+}
+
+/* Icon visibility logic */
+.fullscreen-icon.compress {
+  display: none;
+}
+
+.app-frame.fullscreen .fullscreen-icon.expand {
+  display: none;
+}
+
+.app-frame.fullscreen .fullscreen-icon.compress {
+  display: inline;
+}
+
+/* Fullscreen overlay state */
+.app-frame.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: white;
+  margin: 0; /* Override the default 3rem 0 margins to prevent clipping */
+}
+
+.app-frame.fullscreen iframe {
+  height: 100vh;
+  max-height: none;
+}
+
+.app-frame.fullscreen .app-frame-header {
+  border-radius: 0 0 0 4px;
+}
+
+.app-frame.fullscreen .fullscreen-toggle {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+/* Body scroll lock when fullscreen active */
+body.fullscreen-active {
+  overflow: hidden;
+}
+
+/* Visually hide radio inputs but keep in tab sequence */
+input[name="audience"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Audience Selector Styles */
+.audience-selector {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.audience-selector label {
+  padding: 0.75rem 1.5rem;
+  background: var(--color-neutral-bg);
+  border: 2px solid var(--color-neutral-hover);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.audience-selector label:hover {
+  background: var(--color-neutral-hover);
+  border-color: var(--color-neutral-border);
+}
+
+/* Show selected state */
+#writers:checked ~ .audience-selector-fieldset .audience-selector label[for="writers"],
+#designers:checked ~ .audience-selector-fieldset .audience-selector label[for="designers"],
+#developers:checked ~ .audience-selector-fieldset .audience-selector label[for="developers"] {
+  background: var(--color-primary-accessible);
+  border-color: var(--color-primary-accessible);
+  color: white;
+}
+
+/* Show focus state for radio buttons */
+#writers:focus ~ .audience-selector-fieldset .audience-selector label[for="writers"],
+#designers:focus ~ .audience-selector-fieldset .audience-selector label[for="designers"],
+#developers:focus ~ .audience-selector-fieldset .audience-selector label[for="developers"] {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--color-focus-shadow);
+}
+
+/* Feature Set Visibility Logic */
+.feature-set {
+  display: none;
+}
+
+/* Show appropriate feature set based on checked radio */
+#writers:checked ~ .audience-selector-fieldset ~ .features .writers-features,
+#designers:checked ~ .audience-selector-fieldset ~ .features .designers-features,
+#developers:checked ~ .audience-selector-fieldset ~ .features .developers-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Language Switcher Styles */
+.language-switcher {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.language-switcher a {
+  padding: 0.375rem 0.5rem;
+  background: var(--color-neutral-bg);
+  border: 1px solid var(--color-neutral-border);
+  border-radius: 3px;
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+  min-width: 2rem;
+  text-align: center;
+}
+
+.language-switcher a:hover {
+  background: var(--color-neutral-hover);
+  border-color: #adb5bd;
+}
+
+.language-switcher a[aria-current="page"] {
+  background: var(--color-primary-accessible);
+  border-color: var(--color-primary-accessible);
+  color: white;
+}
+
+/* Dynamic Subtitle Styles */
+.dynamic-subtitle {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.dynamic-subtitle .subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Sample Files Section */
+.sample-files {
+  margin: 3rem 0;
+  padding: 1.5rem;
+  background: var(--color-neutral-bg);
+  border-radius: 8px;
+}
+
+.sample-files h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+.sample-set {
+  display: none;
+}
+
+.sample-set ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.sample-set li {
+  margin-bottom: 0;
+  padding: 1rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid var(--color-neutral-border);
+}
+
+.sample-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+}
+
+.sample-name {
+  font-weight: 500;
+  color: #333;
+  flex-grow: 1;
+}
+
+.sample-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-open,
+.btn-download {
+  padding: 0.375rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid var(--color-primary-accessible);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-open {
+  background: var(--color-primary-accessible);
+  color: white;
+  border: 1px solid var(--color-primary-accessible);
+}
+
+.btn-open:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.btn-download {
+  background: white;
+  color: var(--color-primary-accessible);
+  border: 1px solid var(--color-primary-accessible);
+}
+
+.btn-download:hover {
+  background: var(--color-primary-accessible);
+  color: white;
+}
+
+/* Show appropriate sample set based on checked radio */
+#writers:checked ~ .audience-selector-fieldset ~ .features ~ .sample-files .writers-samples,
+#designers:checked ~ .audience-selector-fieldset ~ .features ~ .sample-files .designers-samples,
+#developers:checked ~ .audience-selector-fieldset ~ .features ~ .sample-files .developers-samples {
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sample-set ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer Styles */
+footer {
+  padding: 2rem 0;
+  border-top: 1px solid #eee;
+  margin-top: 2rem;
+}
+
+.footer-language-nav {
+  display: flex;
+  justify-content: center;
+}
+
+/* License Section Styles */
+.license-section {
+  margin: 3rem 0 2rem;
+  padding: 2rem;
+  border: 1px solid var(--color-neutral-border);
+  border-radius: 8px;
+  background: var(--color-neutral-bg);
+  text-align: center;
+}
+
+.license-section h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+  font-size: 1.5rem;
+}
+
+.license-text {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: pre-wrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.download-button {
+  display: inline-block !important;
+  padding: 1rem 2rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: white !important;
+  background: var(--color-primary-accessible) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.download-button:hover {
+  background: var(--color-primary-hover) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.download-button:focus {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--color-focus-shadow);
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb-nav {
+  background: var(--color-neutral-bg);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-neutral-border);
+}
+
+.breadcrumb {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.breadcrumb-item {
+  color: var(--color-text-muted);
+}
+
+.breadcrumb-item a {
+  color: var(--color-primary-accessible);
+  text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-item:not(.current)::after {
+  content: "›";
+  margin-left: 0.5rem;
+  color: var(--color-text-muted);
+}
+
+.breadcrumb-item.current {
+  color: #333;
+  font-weight: 500;
+}
+
+/* Q&A Content Styles */
+.qa-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.qa-section {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-neutral-border);
+}
+
+.qa-section:last-child {
+  border-bottom: none;
+  margin-bottom: 2rem;
+}
+
+.qa-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-primary-accessible);
+}
+
+.qa-answer {
+  line-height: 1.7;
+  color: #444;
+}
+
+.qa-answer p,
+.qa-answer ul {
+  margin-bottom: 1rem;
+}
+
+.qa-answer p:last-child {
+  margin-bottom: 0;
+}
+
+/* Links in Q&A content */
+.qa-answer a {
+  color: var(--color-primary-accessible);
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+.qa-answer a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* Questions Button */
+.questions-button {
+  display: inline-block !important;
+  padding: 0.75rem 1.5rem !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  color: var(--color-primary-accessible) !important;
+  background: white !important;
+  border: 2px solid var(--color-primary-accessible) !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  margin-top: 2rem !important;
+}
+
+.questions-button:hover {
+  background: var(--color-primary-accessible) !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.questions-button:focus {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--color-focus-shadow);
+}
+
+/* Responsive Design */
+@media(max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  main {
+    padding: 1.5rem 0;
+  }
+  
+  .header-content {
+    gap: 1rem;
+  }
+  
+  .header-text {
+    gap: 0.25rem;
+  }
+  
+  .header-description {
+    font-size: 0.9rem;
+  }
+  
+  .dynamic-subtitle {
+    margin: 1rem 0;
+  }
+  
+  .features {
+    margin-top: 1.5rem;
+  }
+  
+  .sample-files {
+    margin: 2rem 0;
+    padding: 1rem;
+  }
+  
+  .license-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+  }
+  
+  .download-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}

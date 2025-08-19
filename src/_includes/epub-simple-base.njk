@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="{{ lang.code or 'en' }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ (pageTitle | i18n) if pageTitle else 'SEED.html' }} - SEED.html</title>
+    <meta name="description" content="{{ 'meta_description' | i18n }}">
+    <link rel="icon" href="/stewarthaines.ico">
+    <link rel="stylesheet" href="/epub/seed.css">
+    <script>
+      // Automatic locale detection and redirect
+      (function () {
+        try { // Skip if user has previously selected a language
+          const savedLocale = localStorage.getItem('user-selected-locale');
+          if (savedLocale) 
+            return;
+          
+
+          // Skip if URL has fragments or query parameters (shared links)
+          if (window.location.hash || window.location.search) 
+            return;
+          
+
+          // Get browser locale and current page locale
+          const browserLocale = navigator.language.slice(0, 2);
+          const supportedLocales = ['en', 'es', 'fr', 'de'];
+          // Determine current locale from URL path
+          const path = window.location.pathname;
+          let currentLocale = 'en'; // default
+          const pathMatch = path.match(/^\/([a-z]{2})\//);
+          if (pathMatch && supportedLocales.includes(pathMatch[1])) {
+            currentLocale = pathMatch[1];
+          }
+          // Redirect if browser locale is supported and different
+          if (supportedLocales.includes(browserLocale) && browserLocale !== currentLocale) {
+            let newPath = path;
+            if (currentLocale === 'en') { // Add locale prefix to English path
+              newPath = '/' + browserLocale + path;
+            } else { // Replace existing locale prefix
+              newPath = path.replace(/^\/[a-z]{2}\//, '/' + browserLocale + '/');
+            }
+            window.location.href = newPath;
+          }
+        } catch (e) { // Fail silently if localStorage or other features unavailable
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a href="#main" class="skip-link">{{ 'skip_to_main' | i18n }}</a>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="header-text">
+            <h1>{{ pageHeading or 'SEED.html' }}</h1>
+            {% if pageSubtitle %}
+              <div class="dynamic-subtitle">
+                <h2 class="subtitle">{{ pageSubtitle | i18n }}</h2>
+              </div>
+            {% endif %}
+            {% if pageDescription %}
+              <p class="header-description">{{ pageDescription }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </header>
+    {% if breadcrumbs %}
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+          <ol class="breadcrumb">
+            {% for crumb in breadcrumbs %}
+              {% if loop.last %}
+                <li class="breadcrumb-item current" aria-current="page">{{ crumb.text | i18n }}</li>
+              {% else %}
+                <li class="breadcrumb-item">
+                  <a href="{% if crumb.url == 'home_url' %}{{ '/' if lang.code == 'en' else '/' + lang.code + '/' }}epub/{% else %}{{ crumb.url }}{% endif %}">{{ crumb.text | i18n }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ol>
+        </div>
+      </nav>
+    {% endif %}
+    <main id="main">
+      <div class="container">
+        {{ content | safe }}
+      </div>
+    </main>
+    <!-- footer> <div class="container">
+        <nav aria-label="{{ 'language_selection' | i18n }}" class="footer-language-nav">
+          <div class="language-switcher">
+            {% for language in languages %}
+              <a href="{{ ('/' if language.code == 'en' else '/' + language.code + '/') + (pageSlug or 'epub/') }}" {% if language.code == lang.code %} aria-current="page" {% endif %} aria-label="{{ language.name }} {% if language.code == lang.code %}({{ 'current' | i18n }}){% else %}({{ language.name }} {{ 'version' | i18n }}){% endif %}" lang="{{ language.code }}" onclick="localStorage.setItem('user-selected-locale', '{{ language.code }}')">
+                {{ language.code | upper }}
+              </a>
+            {% endfor %}
+          </div>
+        </nav>
+    </div> </footer -->
+  </body>
+</html>

@@ -226,3 +226,151 @@ msgstr ""
 #: src/epub.njk:131
 msgid "license_heading"
 msgstr ""
+
+#: src/epub-questions.njk
+msgid "questions_button"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "breadcrumb_home"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "breadcrumb_questions"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_why_app_q"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_why_app_a"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_browsers_q"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_browsers_a"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_where_files_q"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_where_files_a"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_validation_q"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_validation_a"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_reading_apps_q"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_reading_apps_a"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_freeware_q"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_freeware_a"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_opensource_q"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_opensource_a"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_commercial_q"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_commercial_a"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_ai_q"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_ai_a"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_accessibility_q"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_accessibility_a"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_markdown_textile_q"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_markdown_textile_a"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_support_q"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_support_a"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_languages_q"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_languages_a"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_drm_q"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_drm_a"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_stack_q"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_stack_a"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_process_q"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_process_a"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_who_q"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_who_a"
+msgstr ""

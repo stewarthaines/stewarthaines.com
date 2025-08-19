@@ -131,4 +131,7 @@ layout: epub-base.njk
         <h2>{{ 'license_heading' | i18n }}</h2>
         <p class="license-text">{{ licenseText }}</p>
         <a href="/epub/SEED.html" download="SEED.html" class="download-button">{{ 'download_seed_button' | i18n }}</a>
+        <div style="text-align: center;">
+          <a href="{{ '/' if lang.code == 'en' else '/' + lang.code + '/' }}epub/questions/" class="questions-button">{{ 'questions_button' | i18n }}</a>
+        </div>
       </div>

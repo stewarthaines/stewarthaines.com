@@ -261,3 +261,253 @@ msgstr ""
 #, fuzzy
 msgid "license_heading"
 msgstr "Détails des Fonctionnalités"
+
+#: src/epub-questions.njk
+msgid "questions_button"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "breadcrumb_home"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "breadcrumb_questions"
+msgstr ""
+
+#: src/epub-questions.njk
+msgid "qa_why_app_q"
+msgstr "🤖 Pourquoi cette application ?"
+
+#: src/epub-questions.njk
+msgid "qa_why_app_a"
+msgstr ""
+"🤖 Je l'ai écrite pour moi-même, voulant un environnement dans lequel je peux expérimenter avec du **contenu scripté** dans EPUB. "
+"Le format EPUB 3 est mature et bien supporté, mais les outils de création EPUB le traitent comme un *format de destination* - "
+"équivalent à PDF ou autres formats de livres propriétaires - à la fin d'un pipeline de contenu du plus petit dénominateur commun.\n\n"
+"Les systèmes de lecture EPUB actuels (comme l'app Books d'Apple, et Cantook d'Aldiko) supportent du contenu riche type web "
+"parce qu'ils sont basés sur des logiciels de navigateur web. Je veux explorer les possibilités mais aucun des logiciels existants "
+"qui produit des fichiers EPUB ne supporte le type d'expérience de développement que j'attends en travaillant avec la pile web.\n\n"
+"Je veux voir **des changements immédiats de contenu/style/mise en page/comportement** quand je fais un changement. "
+"Cette app fait cela et répond déjà à mes besoins."
+
+#: src/epub-questions.njk
+msgid "qa_browsers_q"
+msgstr "🤖 Navigateurs Supportés"
+
+#: src/epub-questions.njk
+msgid "qa_browsers_a"
+msgstr "🤖 L'application SEED.html doit fonctionner comme prévu sur les navigateurs **Safari**, **Chrome**, **Edge** et **Firefox** récents. D'autres navigateurs à base de chrome devraient également fonctionner.\n\nL'application fonctionnera dans ces navigateurs sur **iOS/iPadOS/macOS**, **Linux**, **Windows** et **Android**.\n\nL'application est disponible sur [stewarthaines.com/epub](https://stewarthaines.com/epub) et peut également être téléchargée et exécutée à partir du système de fichiers local, que ce soit sur un ordinateur ou un appareil mobile."
+
+#: src/epub-questions.njk
+msgid "qa_where_files_q"
+msgstr "🤖 où sont mes fichiers ?"
+
+#: src/epub-questions.njk
+msgid "qa_where_files_a"
+msgstr ""
+"🤖 L'app SEED.html s'exécute dans votre navigateur web et utilise un cache local géré par le navigateur pour stocker vos fichiers. "
+"**Rien n'est envoyé à un serveur.**\n\n"
+"La façon particulière dont les fichiers sont stockés signifie que vous ne pouvez pas les trouver sur votre système de fichiers local - "
+"ils ne sont disponibles qu'à travers l'app du navigateur.\n\n"
+"Le bouton *'Empaqueter EPUB'* crée un fichier et le télécharge où votre navigateur télécharge normalement les fichiers. "
+"Tout est stocké dans l'EPUB, c'est donc là que sont finalement vos fichiers. Le contenu source en texte brut et "
+"les scripts sont stockés dans un élément de manifeste appelé `SOURCE.zip`.\n\n"
+"**Réponse technique :** Ils sont soit dans le Système de Fichiers Privé d'Origine du navigateur soit dans un magasin IndexedDB, "
+"selon le navigateur et si l'app a été chargée via `http:` ou depuis une URL `file:`."
+
+#: src/epub-questions.njk
+msgid "qa_validation_q"
+msgstr "🤖 Validation ePub"
+
+#: src/epub-questions.njk
+msgid "qa_validation_a"
+msgstr ""
+"🤖 Il est **important** que le fichier epub empaqueté passe la validation. "
+"L'application SEED.html ne peut pas garantir que le contenu sera valide.\n\n"
+"Même une petite faute de frappe dans un fichier css peut entraîner un échec de la validation, "
+"bien que l'ePub puisse toujours être lisible lorsqu'il est chargé latéralement ou importé sur un périphérique.\n\n"
+"J'utilise le [pagina ePub-Checker](https://pagina.gmbh/startseite/leistungen/publishing-softwareloesungen/epub-checker/) "
+"pour la validation."
+
+#: src/epub-questions.njk
+msgid "qa_reading_apps_q"
+msgstr "🤖 Applications de lecture ePub"
+
+#: src/epub-questions.njk
+msgid "qa_reading_apps_a"
+msgstr ""
+"🤖 En **2025** j'ai trouvé un bon support pour EPUB 3 avec du contenu interactif dans ces applications :\n\n"
+"- [Books app](https://www.apple.com/apple-books/) sur iOS/iPadOS/macOS\n"
+"- [Cantook by Aldiko](https://pro.cantook.com/en/l-application-cantook) sur Android/iOS\n"
+"- [Reasily](https://reasily.blogspot.com/) sur Android\n"
+"- [Thorium Reader](https://thorium.edrlab.org/) par EDRLab sur macOS/Windows/Linux\n"
+"- [BookFusion](https://www.bookfusion.com/) sur iOS/Android\n\n"
+"Je m'attends à ce qu'il y en ait d'autres que je ne connais pas encore."
+
+#: src/epub-questions.njk
+msgid "qa_freeware_q"
+msgstr "🤖 Pourquoi une licence freeware ?"
+
+#: src/epub-questions.njk
+msgid "qa_freeware_a"
+msgstr ""
+"🤖 Je veux que vous puissiez l'utiliser autant que vous le souhaitez pour des **projets personnels, non commerciaux** sans frais pour vous. "
+"Vous pouvez le partager avec d'autres sous les mêmes conditions.\n\n"
+"Ce n'est *pas open source* pour le moment.\n\n"
+"Si vous aimez l'utiliser et souhaitez _faire un don_ pour soutenir le développement continu, ce serait formidable ! "
+"J'ai un compte LiberaPay ici à mon nom : "
+"<script src='https://liberapay.com/stewarthaines/widgets/button.js'></script> "
+"<noscript><a href='https://liberapay.com/stewarthaines/donate'>"
+"<img alt='Faire un don avec Liberapay' src='https://liberapay.com/assets/widgets/donate.svg'>"
+"</a></noscript>"
+
+#: src/epub-questions.njk
+msgid "qa_opensource_q"
+msgstr "🤖 Pourquoi pas open source ?"
+
+#: src/epub-questions.njk
+msgid "qa_opensource_a"
+msgstr ""
+"🤖 1. Je n'ai **aucune expérience** dans l'exécution d'un projet open source\n"
+"2. Je n'ai **aucun enthousiasme** pour la gestion d'un projet open source\n"
+"3. Je m'attends à ce que si le logiciel trouve une communauté d'utilisateurs, ils ne seront en grande partie "
+"*pas des développeurs de logiciels * et ne se soucieront pas qu'il ne soit pas open source\n"
+"4. Le projet a été largement généré avec un LLM et je ne connais pas encore toutes les conséquences de cela"
+
+#: src/epub-questions.njk
+msgid "qa_commercial_q"
+msgstr "🤖 Qu'est-ce qu'une licence commerciale ?"
+
+#: src/epub-questions.njk
+msgid "qa_commercial_a"
+msgstr ""
+"🤖 1. Faites un don d'argent via **LiberaPay**"
+"<script src='https://liberapay.com/stewarthaines/widgets/button.js'></script> "
+"<noscript><a href='https://liberapay.com/stewarthaines/donate'>"
+"<img alt='Faire un don avec Liberapay' src='https://liberapay.com/assets/widgets/donate.svg'>"
+"</a></noscript>\n"
+"2. Envoyez-moi un email avec le numéro de facture pour que je puisse faire le recoupement : "
+"[Email Stewart](mailto:stewarthaines+seed@gmail.com?subject=SEED.html%20Commercial%20License)\n"
+"3. Recevez un email de ma part approuvant votre demande d'utilisation commerciale du logiciel"
+
+#: src/epub-questions.njk
+msgid "qa_ai_q"
+msgstr "🤖 A quel propos ?"
+
+#: src/epub-questions.njk
+msgid "qa_ai_a"
+msgstr ""
+"🤖 L'application SEED.html a été développée en **juillet et août 2025** avec une utilisation intensive du produit "
+"[Code Claude d'Anthropic](https://claude.ai/code), principalement en utilisant les modèles Sonnet 3.7 et 4.\n\n"
+"Claude Code est un assistant de codage alimenté par LLM avec des capacités d'interface de ligne de commande. "
+"L'agent a écrit **100% du code et des tests** pour ce projet dans un framework javascript appelé **Svelte 5**, "
+"avec lequel je n'avais aucune expérience préalable.\n\n"
+"Ça a été un voyage."
+
+#: src/epub-questions.njk
+msgid "qa_accessibility_q"
+msgstr "🤖 À propos du menu Accessibilité"
+
+#: src/epub-questions.njk
+msgid "qa_accessibility_a"
+msgstr ""
+"🤖 L'application est utilisable **sans souris** (via la navigation au clavier) et devrait prendre en charge "
+"le logiciel de lecture d'écran.\n\n"
+"Je suis sûr que ça pourrait être mieux.\n\n"
+"Si vous avez quelque chose de constructif à me dire, veuillez me contacter <a href='#on-mastodon'>sur mastodon</a>."
+
+#: src/epub-questions.njk
+msgid "qa_markdown_textile_q"
+msgstr "🤖 Markdown ou Textile ?"
+
+#: src/epub-questions.njk
+msgid "qa_markdown_textile_a"
+msgstr ""
+"🤖 La raison principale d'utiliser le formatage [Markdown](https://daringfireball.net/projects/markdown/) est son support dans d'autres outils d'écriture. "
+"Si vous avez des flux de travail existants ou des préférences, je suggérerais de rester avec l'une des bibliothèques Markdown des EPUBs d'exemple.\n\n"
+"J'utilise beaucoup [Obsidian app](https://obsidian.md/) et je suis très à l'aise avec Markdown dans cet environnement.\n\n"
+"Pour la création d'EPUB, je penche vers [Textile](https://textile-lang.com) dans mes projets à cause de :\n\n"
+"- La plus petite taille de la bibliothèque JavaScript\n"
+"- La facilité d'ajouter des attributs (comme `id` et `class` et `data-src`)\n"
+"- Une relation plus explicite entre la convention de formatage source et la représentation xhtml finale.\n\n"
+"J'ai commencé en supposant que Markdown était le seul choix, mais je me tourne vers Textile dans cet environnement."
+
+#: src/epub-questions.njk
+msgid "qa_support_q"
+msgstr "🤖 Puis-je obtenir de l'aide ? Où dois-je signaler les bugs ?"
+
+#: src/epub-questions.njk
+msgid "qa_support_a"
+msgstr ""
+"🤖 Je n'offre **pas d'aide** pour le moment. J'ai développé l'application pour mon propre usage et j'espère qu'elle intéressera "
+"au moins quelques autres personnes dans sa forme actuelle.\n\n"
+"Si vous trouvez un *show-stopper* d'un bug et que vous voulez vraiment m'en parler, veuillez me contacter "
+"<a href='#on-mastodon'>sur mastodon</a>."
+
+#: src/epub-questions.njk
+msgid "qa_languages_q"
+msgstr "🤖 Et les autres langues ?"
+
+#: src/epub-questions.njk
+msgid "qa_languages_a"
+msgstr ""
+"🤖 Je suis très intéressé à rendre l'application utile aux écrivains en **langues non anglaises**, "
+"en particulier * systèmes d'écriture de droite à gauche * et autres scripts non latins.\n\n"
+"J'ai une instance weblate sur codeberg pour gérer les localisations.\n\n"
+"Si vous souhaitez m'aider à étendre l'utilité de l'application à de nouveaux utilisateurs, "
+"veuillez me contacter <a href='#on-mastodon'>sur mastodon</a>."
+
+#: src/epub-questions.njk
+msgid "qa_drm_q"
+msgstr "🤖 A quel propos ?"
+
+#: src/epub-questions.njk
+msgid "qa_drm_a"
+msgstr ""
+"🤖 Des personnes plus intelligentes que moi y ont travaillé et ont créé des protections facilement cassables "
+"pour les livres numériques.\n\n"
+"J'ai **zéro temps** pour penser à restreindre l'accès aux médias numériques créés avec ce logiciel.\n\n"
+"Utilisez cette application pour créer des articles pour vos **amis et votre famille**. "
+"Laissez les entreprises gérer leurs propres intérêts."
+
+#: src/epub-questions.njk
+msgid "qa_stack_q"
+msgstr "🤖 Quelle est la pile de projets ?"
+
+#: src/epub-questions.njk
+msgid "qa_stack_a"
+msgstr ""
+"🤖 Écrite en **Typescript** utilisant **Svelte 5** avec un environnement de développement vite 6.3 sur node v20.18.\n\n"
+"Se compile en un seul fichier HTML utilisant `vite-plugin-singlefile` avec des scripts/styles/assets intégrés.\n\n"
+"Elle utilise des APIs de navigateur :\n\n"
+"- `Compression Stream` et `Decompression Stream` pour empaqueter/désempaqueter des fichiers .epub\n"
+"- `OPFS` et `IndexedDB` pour stocker les données de fichiers\n"
+"- `blob urls` pour rendre les assets disponibles pour la prévisualisation locale\n\n"
+"Cette architecture rend pratique de l'intégrer dans une page web, comme vous pouvez le voir sur "
+"[stewarthaines.com/epub](https://stewarthaines.com/epub) qui est hébergé sur GitHub Pages "
+"et servi via le cache Cloudflare."
+
+#: src/epub-questions.njk
+msgid "qa_process_q"
+msgstr "🤖 Quel a été le processus de développement ?"
+
+#: src/epub-questions.njk
+msgid "qa_process_a"
+msgstr ""
+"🤖 **Tous les codes d'application et les tests** pour cette version de l'application ont été produits à l'aide du produit "
+"[Code Claude d'Anthropic](https://claude.ai/code), principalement avec les modèles Sonnet 3.7 et 4.\n\n"
+"J'ai précédemment écrit une version en utilisant claude avec une pile **VueJS**, et avant cela, j'ai écrit une version VueJS "
+"*\"manuellement\"*.\n\n"
+"Les idées ont été bien travaillées dans ce processus, mais je pense que ce n'est **pas la forme ultime ** "
+"d'un environnement de création ePub basé sur un navigateur scriptable."
+
+#: src/epub-questions.njk
+msgid "qa_who_q"
+msgstr "🤖 Qui a fait ça?"
+
+#: src/epub-questions.njk
+msgid "qa_who_a"
+msgstr ""
+"🤖 Je m'appelle **Stewart Haines**. Je vis à Melbourne/Naarm, en Australie.\n\n"
+"Je suis <span id='on-mastodon'>sur Mastodon</span> pour soutenir ce projet en tant que "
+"[@editme@mastodon.social](https://mastodon.social/@editme) (SEED.html)"

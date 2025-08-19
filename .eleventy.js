@@ -1,5 +1,6 @@
 const i18n = require('eleventy-plugin-i18n');
 const fs = require('fs');
+const markdownIt = require('markdown-it');
 
 // Load translations from JSON files
 function loadTranslations() {
@@ -25,6 +26,14 @@ function loadTranslations() {
 
 const translations = loadTranslations();
 
+// Configure markdown-it
+const md = markdownIt({
+  html: true,        // Allow HTML tags in markdown
+  linkify: true,     // Auto-convert URLs to links
+  typographer: true, // Smart quotes and dashes
+  breaks: true       // Convert \n to <br>
+});
+
 module.exports = function(eleventyConfig) {
   // Configure i18n plugin
   eleventyConfig.addPlugin(i18n, {
@@ -36,6 +45,17 @@ module.exports = function(eleventyConfig) {
       '*': 'en'  // Default fallback to English
     },
     defaultLanguage: 'en'
+  });
+
+  // Add markdown filters
+  // Inline markdown (no <p> wrapper)
+  eleventyConfig.addFilter("md", (content) => {
+    return content ? md.renderInline(content) : '';
+  });
+
+  // Block markdown (with <p> tags)
+  eleventyConfig.addFilter("mdBlock", (content) => {
+    return content ? md.render(content) : '';
   });
 
   // Disable live reload script injection to prevent corruption of standalone HTML apps
@@ -57,6 +77,7 @@ module.exports = function(eleventyConfig) {
   
   // Preserve existing epub folder but exclude index.html (we'll generate it)
   eleventyConfig.addPassthroughCopy("epub/SEED.html");
+  eleventyConfig.addPassthroughCopy("epub/seed.css");
   eleventyConfig.addPassthroughCopy("epub/georgia.epub");
   eleventyConfig.addPassthroughCopy("epub/feed.opds");
   eleventyConfig.addPassthroughCopy("epub/feed.opds.xml");

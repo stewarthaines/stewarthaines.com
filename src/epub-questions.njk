@@ -1,0 +1,138 @@
+---
+pagination:
+  data: languages
+  size: 1
+  alias: lang
+permalink: "{{ '/' if lang.code == 'en' else '/' + lang.code + '/' }}epub/questions/"
+layout: epub-simple-base.njk
+pageTitle: "breadcrumb_questions"
+pageHeading: "SEED.html"
+pageSubtitle: "breadcrumb_questions"
+pageSlug: "epub/questions/"
+breadcrumbs:
+  - text: "breadcrumb_home"
+    url: "home_url"
+  - text: "breadcrumb_questions"
+    url: "#"
+---
+
+<div class="qa-content">
+  <div class="qa-section">
+    <h2 id="why-app">{{ 'qa_why_app_q' | i18n }}</h2>
+    <div class="qa-answer">
+      {{ 'qa_why_app_a' | i18n | mdBlock | safe }}
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h2 id="browsers">{{ 'qa_browsers_q' | i18n }}</h2>
+    <div class="qa-answer">
+      {{ 'qa_browsers_a' | i18n | mdBlock | safe }}
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h2 id="files">{{ 'qa_where_files_q' | i18n }}</h2>
+    <div class="qa-answer">
+      {{ 'qa_where_files_a' | i18n | mdBlock | safe }}
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h2 id="validation">{{ 'qa_validation_q' | i18n }}</h2>
+    <div class="qa-answer">
+      {{ 'qa_validation_a' | i18n | mdBlock | safe }}
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h2 id="reading-apps">{{ 'qa_reading_apps_q' | i18n }}</h2>
+    <div class="qa-answer">
+      {{ 'qa_reading_apps_a' | i18n | mdBlock | safe }}
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h2 id="freeware">{{ 'qa_freeware_q' | i18n }}</h2>
+    <div class="qa-answer">
+      {{ 'qa_freeware_a' | i18n | mdBlock | safe }}
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h2 id="opensource">{{ 'qa_opensource_q' | i18n }}</h2>
+    <div class="qa-answer">
+      {{ 'qa_opensource_a' | i18n | mdBlock | safe }}
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h2 id="commercial">{{ 'qa_commercial_q' | i18n }}</h2>
+    <div class="qa-answer">
+      {{ 'qa_commercial_a' | i18n | mdBlock | safe }}
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h2 id="ai">{{ 'qa_ai_q' | i18n }}</h2>
+    <div class="qa-answer">
+      {{ 'qa_ai_a' | i18n | mdBlock | safe }}
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h2 id="accessibility">{{ 'qa_accessibility_q' | i18n }}</h2>
+    <div class="qa-answer">
+      {{ 'qa_accessibility_a' | i18n | mdBlock | safe }}
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h2 id="markdown-textile">{{ 'qa_markdown_textile_q' | i18n }}</h2>
+    <div class="qa-answer">
+      {{ 'qa_markdown_textile_a' | i18n | mdBlock | safe }}
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h2 id="support">{{ 'qa_support_q' | i18n }}</h2>
+    <div class="qa-answer">
+      {{ 'qa_support_a' | i18n | mdBlock | safe }}
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h2 id="languages">{{ 'qa_languages_q' | i18n }}</h2>
+    <div class="qa-answer">
+      {{ 'qa_languages_a' | i18n | mdBlock | safe }}
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h2 id="drm">{{ 'qa_drm_q' | i18n }}</h2>
+    <div class="qa-answer">
+      {{ 'qa_drm_a' | i18n | mdBlock | safe }}
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h2 id="stack">{{ 'qa_stack_q' | i18n }}</h2>
+    <div class="qa-answer">
+      {{ 'qa_stack_a' | i18n | mdBlock | safe }}
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h2 id="process">{{ 'qa_process_q' | i18n }}</h2>
+    <div class="qa-answer">
+      {{ 'qa_process_a' | i18n | mdBlock | safe }}
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h2 id="who">{{ 'qa_who_q' | i18n }}</h2>
+    <div class="qa-answer">
+      {{ 'qa_who_a' | i18n | mdBlock | safe }}
+    </div>
+  </div>
+</div>

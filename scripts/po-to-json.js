@@ -93,7 +93,12 @@ for (const lang of languages) {
       const filteredTranslations = {};
       Object.keys(translations).forEach(key => {
         if (key && translations[key]) {
-          filteredTranslations[key] = translations[key];
+          // Unescape common sequences for proper markdown processing
+          let value = translations[key];
+          value = value.replace(/\\n/g, '\n');  // Convert \\n to actual newlines
+          value = value.replace(/\\t/g, '\t');  // Convert \\t to actual tabs
+          value = value.replace(/\\"/g, '"');   // Convert \\" to actual quotes
+          filteredTranslations[key] = value;
         }
       });
       
