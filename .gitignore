@@ -6,3 +6,6 @@ _site/
 
 # System files
 .DS_Store
+
+# claude dev artifacts
+.playwright-mcp

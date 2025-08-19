@@ -56,17 +56,23 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("CNAME");
   
   // Preserve existing epub folder but exclude index.html (we'll generate it)
+  eleventyConfig.addPassthroughCopy("epub/SEED.html");
   eleventyConfig.addPassthroughCopy("epub/georgia.epub");
   eleventyConfig.addPassthroughCopy("epub/feed.opds");
   eleventyConfig.addPassthroughCopy("epub/feed.opds.xml");
   eleventyConfig.addPassthroughCopy("epub/full");
   eleventyConfig.addPassthroughCopy("epub/indexeddb");
   eleventyConfig.addPassthroughCopy("epub/lite");
+  eleventyConfig.addPassthroughCopy("epub/samples");
 
   // Completely ignore template processing for epub and RoadkillTour
   eleventyConfig.ignores.add("epub/**/*.html");
   eleventyConfig.ignores.add("RoadkillTour/**/*.html");
-  
+
+  // watch for changes in the sample directory
+  eleventyConfig.addWatchTarget("epub/samples/");
+  eleventyConfig.addWatchTarget("src/_data/locales/");
+
   // Override template formats to exclude .html files outside src/
   eleventyConfig.setTemplateFormats(["njk", "md", "11ty.js"]);
 

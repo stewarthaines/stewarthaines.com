@@ -80,6 +80,13 @@ This project follows strict accessibility and internationalization standards:
 - **Internationalization**: Multi-language support with automatic detection - see [docs/internationalization.md](docs/internationalization.md)
 - **Quality Gates**: Testing and review procedures - see [docs/development-workflow.md](docs/development-workflow.md)
 
+### Translation Management
+
+- **DO NOT manually edit JSON translation files** in `src/_data/locales/`
+- **Add new translation keys to `locales/messages.pot` only**
+- Translation updates to JSON files are handled by build scripts
+- Focus on template code changes; translations are processed separately
+
 **When to consult detailed docs:**
 
 - Interactive components → accessibility.md
@@ -125,3 +132,5 @@ This rule exists because undocumented features:
 - Can break carefully planned user flows
 
 **Stick to documented standards only. When in doubt, ask.**
+
+- don't run the dev server - ask the user to run or restart it
