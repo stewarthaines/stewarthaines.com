@@ -7,36 +7,30 @@ permalink: "{{ '/' if lang.code == 'en' else '/' + lang.code + '/' }}epub/"
 layout: epub-base.njk
 ---
 
-<div class="hero">
-  <p>{{ 'hero_description' | i18n }}</p>
-</div>
-<input type="radio" name="audience" id="authors" checked="checked">
+<input type="radio" name="audience" id="writers" checked="checked">
   <input type="radio" name="audience" id="designers">
     <input type="radio" name="audience" id="developers">
       <fieldset class="audience-selector-fieldset">
         <legend>{{ 'choose_role_legend' | i18n }}</legend>
         <div class="audience-selector">
-          <label for="authors">
-            <span class="sr-only">{{ 'view_features_for' | i18n }}
-            </span>
-            {{ 'audience_authors' | i18n }}
+          <label for="writers">
+            <span class="sr-only">{{ 'view_features_for' | i18n }}</span>
+            {{ 'audience_writers' | i18n }}
           </label>
           <label for="designers">
-            <span class="sr-only">{{ 'view_features_for' | i18n }}
-            </span>
+            <span class="sr-only">{{ 'view_features_for' | i18n }}</span>
             {{ 'audience_designers' | i18n }}
           </label>
           <label for="developers">
-            <span class="sr-only">{{ 'view_features_for' | i18n }}
-            </span>
+            <span class="sr-only">{{ 'view_features_for' | i18n }}</span>
             {{ 'audience_developers' | i18n }}
           </label>
         </div>
       </fieldset>
       <div class="features" aria-live="polite">
         <h2 class="sr-only">{{ 'feature_details_heading' | i18n }}</h2>
-        <!-- Authors features -->
-        <div class="feature-set authors-features">
+        <!-- Writers features -->
+        <div class="feature-set writers-features">
           <div class="feature">
             <h3>{{ 'feature_plain_text' | i18n }}</h3>
             <p>{{ 'feature_plain_text_desc' | i18n }}</p>
@@ -81,6 +75,60 @@ layout: epub-base.njk
           </div>
         </div>
       </div>
+      <div class="sample-files" aria-live="polite">
+        <h2>{{ 'sample_files_heading' | i18n }}</h2>
+        <!-- Writers samples -->
+        <div class="sample-set writers-samples">
+          <ul>
+            {% for file in sampleFiles.writers %}
+            <li class="sample-item">
+              <span class="sample-name">{{ file.displayName }}</span>
+              <div class="sample-buttons">
+                <button class="btn-open" onclick="openInSeed('{{ file.path }}')">Open</button>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- Designers samples -->
+        <div class="sample-set designers-samples">
+          <ul>
+            {% for file in sampleFiles.designers %}
+            <li class="sample-item">
+              <span class="sample-name">{{ file.displayName }}</span>
+              <div class="sample-buttons">
+                <button class="btn-open" onclick="openInSeed('{{ file.path }}')">Open</button>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- Developers samples -->
+        <div class="sample-set developers-samples">
+          <ul>
+            {% for file in sampleFiles.developers %}
+            <li class="sample-item">
+              <span class="sample-name">{{ file.displayName }}</span>
+              <div class="sample-buttons">
+                <button class="btn-open" onclick="openInSeed('{{ file.path }}')">Open</button>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
       <div class="app-frame">
-        <iframe src="/epub/indexeddb/EDITME.html" title="{{ 'iframe_title' | i18n }}" aria-labelledby="app-heading"></iframe>
+        <div class="app-frame-header">
+          <button class="fullscreen-toggle" aria-label="{{ 'toggle_fullscreen' | i18n }}" title="{{ 'toggle_fullscreen' | i18n }}">
+            <span class="fullscreen-icon expand" aria-hidden="true">↗</span>
+            <span class="fullscreen-icon compress" aria-hidden="true">↙</span>
+          </button>
+        </div>
+        <iframe src="/epub/SEED.html" title="{{ 'iframe_title' | i18n }}" aria-labelledby="app-heading"></iframe>
+      </div>
+      
+      <div class="license-section">
+        <h2>{{ 'license_heading' | i18n }}</h2>
+        <p class="license-text">{{ licenseText }}</p>
+        <a href="/epub/SEED.html" download="SEED.html" class="download-button">{{ 'download_seed_button' | i18n }}</a>
       </div>
