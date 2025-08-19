@@ -115,6 +115,14 @@ msgstr ""
 msgid "interactive_epub_tool_heading"
 msgstr ""
 
+#: src/epub.njk:81
+msgid "show_all_samples"
+msgstr ""
+
+#: src/epub.njk:82
+msgid "show_current_samples"
+msgstr ""
+
 #: src/_includes/epub-base.njk:223
 msgid "language_selection"
 msgstr ""

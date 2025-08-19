@@ -372,6 +372,7 @@ input[name="audience"] {
 
 /* Sample Files Section */
 .sample-files {
+  position: relative;
   margin: 3rem 0;
   padding: 1.5rem;
   background: var(--color-neutral-bg);
@@ -399,7 +400,7 @@ input[name="audience"] {
 
 .sample-set li {
   margin-bottom: 0;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   background: white;
   border-radius: 6px;
   border: 1px solid var(--color-neutral-border);
@@ -462,6 +463,66 @@ input[name="audience"] {
 #writers:checked ~ .audience-selector-fieldset ~ .features ~ .sample-files .writers-samples,
 #designers:checked ~ .audience-selector-fieldset ~ .features ~ .sample-files .designers-samples,
 #developers:checked ~ .audience-selector-fieldset ~ .features ~ .sample-files .developers-samples {
+  display: block;
+}
+
+/* Show All Toggle Styles */
+.show-all-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.show-all-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-primary-accessible);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  z-index: 5;
+}
+
+.show-all-button:hover {
+  background: var(--color-primary-hover);
+}
+
+.show-all-button:focus,
+.show-all-toggle:focus + .sample-files .show-all-button {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Toggle button text spans */
+.show-all-toggle:not(:checked) + .sample-files .show-all-button .show-current-text {
+  display: none;
+}
+
+.show-all-toggle:checked + .sample-files .show-all-button .show-all-text {
+  display: none;
+}
+
+/* Hide individual sample sets when show-all is checked */
+.show-all-toggle:checked + .sample-files .writers-samples,
+.show-all-toggle:checked + .sample-files .designers-samples,
+.show-all-toggle:checked + .sample-files .developers-samples {
+  display: none !important;
+}
+
+/* Show all-samples when checkbox is checked */
+.show-all-toggle:checked + .sample-files .all-samples {
   display: block;
 }
 
@@ -628,7 +689,6 @@ footer {
 .qa-answer a {
   color: var(--color-primary-accessible);
   text-decoration: underline;
-  word-break: break-all;
 }
 
 .qa-answer a:hover {

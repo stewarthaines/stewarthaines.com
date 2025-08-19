@@ -60,8 +60,25 @@ function scanDirectory(audienceDir) {
   }
 }
 
+const writersFiles = scanDirectory('writers');
+const designersFiles = scanDirectory('designers');
+const developersFiles = scanDirectory('developers');
+const curiositiesFiles = scanDirectory('curiosities'); // Additional samples only for "Show All"
+
+// Combine all samples and remove duplicates based on filename
+const allFiles = [...writersFiles, ...designersFiles, ...developersFiles, ...curiositiesFiles]
+  .filter((file, index, arr) => 
+    arr.findIndex(f => f.filename === file.filename) === index
+  )
+  .sort((a, b) => {
+    const dateA = extractDate(a.filename);
+    const dateB = extractDate(b.filename);
+    return dateB - dateA; // Sort most recent first
+  });
+
 module.exports = {
-  writers: scanDirectory('writers'),
-  designers: scanDirectory('designers'),
-  developers: scanDirectory('developers')
+  writers: writersFiles,
+  designers: designersFiles,
+  developers: developersFiles,
+  all: allFiles
 };

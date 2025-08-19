@@ -75,7 +75,12 @@ layout: epub-base.njk
           </div>
         </div>
       </div>
+      <input type="checkbox" id="show-all-samples" class="show-all-toggle">
       <div class="sample-files" aria-live="polite">
+        <label for="show-all-samples" class="show-all-button">
+          <span class="show-all-text">{{ 'show_all_samples' | i18n }}</span>
+          <span class="show-current-text">{{ 'show_current_samples' | i18n }}</span>
+        </label>
         <h2>{{ 'sample_files_heading' | i18n }}</h2>
         <!-- Writers samples -->
         <div class="sample-set writers-samples">
@@ -107,6 +112,19 @@ layout: epub-base.njk
         <div class="sample-set developers-samples">
           <ul>
             {% for file in sampleFiles.developers %}
+            <li class="sample-item">
+              <span class="sample-name">{{ file.displayName }}</span>
+              <div class="sample-buttons">
+                <button class="btn-open" onclick="openInSeed('{{ file.path }}')">Open</button>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- All samples -->
+        <div class="sample-set all-samples">
+          <ul>
+            {% for file in sampleFiles.all %}
             <li class="sample-item">
               <span class="sample-name">{{ file.displayName }}</span>
               <div class="sample-buttons">

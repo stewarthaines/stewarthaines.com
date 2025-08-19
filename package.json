@@ -6,6 +6,7 @@
   "scripts": {
     "build": "eleventy",
     "dev": "eleventy --serve --watch",
+    "dev-https": "npm run dev & npx local-ssl-proxy --source 8443 --target 8080 --hostname ibis.local",
     "start": "eleventy --serve",
     "clean": "rm -rf _site",
     "extract-i18n": "node scripts/extract-i18n.js",
@@ -20,6 +21,7 @@
     "@11ty/eleventy": "^3.1.2",
     "gettext-extractor": "^4.0.1",
     "glob": "^11.0.3",
+    "local-ssl-proxy": "^2.0.5",
     "markdown-it": "^14.1.0"
   },
   "dependencies": {
