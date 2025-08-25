@@ -65,8 +65,66 @@ const designersFiles = scanDirectory('designers');
 const developersFiles = scanDirectory('developers');
 const curiositiesFiles = scanDirectory('curiosities'); // Additional samples only for "Show All"
 
-// Combine all samples and remove duplicates based on filename
-const allFiles = [...writersFiles, ...designersFiles, ...developersFiles, ...curiositiesFiles]
+// Calculate dynamic offsets for continuous numbering
+const writersOffset = 1;
+const designersOffset = writersFiles.length + 1;
+const developersOffset = writersFiles.length + designersFiles.length + 1;
+const curiositiesOffset = writersFiles.length + designersFiles.length + developersFiles.length + 1;
+
+// Add indices to writers files (01, 02, 03...)
+const indexedWritersFiles = writersFiles
+  .sort((a, b) => {
+    const dateA = extractDate(a.filename);
+    const dateB = extractDate(b.filename);
+    return dateB - dateA; // Sort most recent first
+  })
+  .map((file, index) => ({
+    ...file,
+    number: (index + writersOffset).toString().padStart(2, '0'),
+    displayName: file.displayName
+  }));
+
+// Add indices to designers files (dynamic offset)
+const indexedDesignersFiles = designersFiles
+  .sort((a, b) => {
+    const dateA = extractDate(a.filename);
+    const dateB = extractDate(b.filename);
+    return dateB - dateA; // Sort most recent first
+  })
+  .map((file, index) => ({
+    ...file,
+    number: (index + designersOffset).toString().padStart(2, '0'),
+    displayName: file.displayName
+  }));
+
+// Add indices to developers files (dynamic offset)
+const indexedDevelopersFiles = developersFiles
+  .sort((a, b) => {
+    const dateA = extractDate(a.filename);
+    const dateB = extractDate(b.filename);
+    return dateB - dateA; // Sort most recent first
+  })
+  .map((file, index) => ({
+    ...file,
+    number: (index + developersOffset).toString().padStart(2, '0'),
+    displayName: file.displayName
+  }));
+
+// Add indices to curiosities files (dynamic offset)
+const indexedCuriositiesFiles = curiositiesFiles
+  .sort((a, b) => {
+    const dateA = extractDate(a.filename);
+    const dateB = extractDate(b.filename);
+    return dateB - dateA; // Sort most recent first
+  })
+  .map((file, index) => ({
+    ...file,
+    number: (index + curiositiesOffset).toString().padStart(2, '0'),
+    displayName: file.displayName
+  }));
+
+// For "all" view, combine indexed samples from each category
+const allFiles = [...indexedWritersFiles, ...indexedDesignersFiles, ...indexedDevelopersFiles, ...indexedCuriositiesFiles]
   .filter((file, index, arr) => 
     arr.findIndex(f => f.filename === file.filename) === index
   )
@@ -77,8 +135,8 @@ const allFiles = [...writersFiles, ...designersFiles, ...developersFiles, ...cur
   });
 
 module.exports = {
-  writers: writersFiles,
-  designers: designersFiles,
-  developers: developersFiles,
+  writers: indexedWritersFiles,
+  designers: indexedDesignersFiles,
+  developers: indexedDevelopersFiles,
   all: allFiles
 };
