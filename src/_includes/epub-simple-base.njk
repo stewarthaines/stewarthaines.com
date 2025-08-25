@@ -16,10 +16,12 @@
             return;
           
 
+
           // Skip if URL has fragments or query parameters (shared links)
           if (window.location.hash || window.location.search) 
             return;
           
+
 
           // Get browser locale and current page locale
           const browserLocale = navigator.language.slice(0, 2);
@@ -66,7 +68,7 @@
       </div>
     </header>
     {% if breadcrumbs %}
-      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <nav aria-label="{{ 'breadcrumb_nav_label' | i18n }}" class="breadcrumb-nav">
         <div class="container">
           <ol class="breadcrumb">
             {% for crumb in breadcrumbs %}

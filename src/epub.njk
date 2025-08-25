@@ -76,80 +76,96 @@ layout: epub-base.njk
         </div>
       </div>
       <input type="checkbox" id="show-all-samples" class="show-all-toggle">
-      <div class="sample-files" aria-live="polite">
-        <label for="show-all-samples" class="show-all-button">
-          <span class="show-all-text">{{ 'show_all_samples' | i18n }}</span>
-          <span class="show-current-text">{{ 'show_current_samples' | i18n }}</span>
-        </label>
-        <h2>{{ 'sample_files_heading' | i18n }}</h2>
-        <!-- Writers samples -->
-        <div class="sample-set writers-samples">
-          <ul>
-            {% for file in sampleFiles.writers %}
-            <li class="sample-item">
-              <span class="sample-name">{{ file.displayName }}</span>
-              <div class="sample-buttons">
-                <button class="btn-open" onclick="openInSeed('{{ file.path }}')">Open</button>
-              </div>
-            </li>
-            {% endfor %}
-          </ul>
+        <div class="sample-files" aria-live="polite">
+          <label for="show-all-samples" class="show-all-button">
+            <span class="show-all-text">{{ 'show_all_samples' | i18n }}</span>
+            <span class="show-current-text">{{ 'show_current_samples' | i18n }}</span>
+          </label>
+          <h2>{{ 'sample_files_heading' | i18n }}</h2>
+          <!-- Writers samples -->
+          <div class="sample-set writers-samples">
+            <ul>
+              {% for file in sampleFiles.writers %}
+                <li class="sample-item">
+                  <span class="sample-name">
+                    <span class="sample-number">{{ file.number }}</span>
+                    {{ file.displayName }}
+                  </span>
+                  <div class="sample-buttons">
+                    <button class="btn-open" onclick="openInSeed('{{ file.path }}')">{{ 'open_button' | i18n }}</button>
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <!-- Designers samples -->
+          <div class="sample-set designers-samples">
+            <ul>
+              {% for file in sampleFiles.designers %}
+                <li class="sample-item">
+                  <span class="sample-name">
+                    <span class="sample-number">{{ file.number }}</span>
+                    {{ file.displayName }}
+                  </span>
+                  <div class="sample-buttons">
+                    <button class="btn-open" onclick="openInSeed('{{ file.path }}')">{{ 'open_button' | i18n }}</button>
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <!-- Developers samples -->
+          <div class="sample-set developers-samples">
+            <ul>
+              {% for file in sampleFiles.developers %}
+                <li class="sample-item">
+                  <span class="sample-name">
+                    <span class="sample-number">{{ file.number }}</span>
+                    {{ file.displayName }}
+                  </span>
+                  <div class="sample-buttons">
+                    <button class="btn-open" onclick="openInSeed('{{ file.path }}')">{{ 'open_button' | i18n }}</button>
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <!-- All samples -->
+          <div class="sample-set all-samples">
+            <ul>
+              {% for file in sampleFiles.all %}
+                <li class="sample-item">
+                  <span class="sample-name">
+                    {% if file.number %}
+                      <span class="sample-number">{{ file.number }}</span>
+                    {% endif %}
+                    {{ file.displayName }}
+                  </span>
+                  <div class="sample-buttons">
+                    <button class="btn-open" onclick="openInSeed('{{ file.path }}')">{{ 'open_button' | i18n }}</button>
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
-        <!-- Designers samples -->
-        <div class="sample-set designers-samples">
-          <ul>
-            {% for file in sampleFiles.designers %}
-            <li class="sample-item">
-              <span class="sample-name">{{ file.displayName }}</span>
-              <div class="sample-buttons">
-                <button class="btn-open" onclick="openInSeed('{{ file.path }}')">Open</button>
-              </div>
-            </li>
-            {% endfor %}
-          </ul>
+        <div class="app-frame">
+          <div class="app-frame-header">
+            <button class="fullscreen-toggle" aria-label="{{ 'toggle_fullscreen' | i18n }}" title="{{ 'toggle_fullscreen' | i18n }}">
+              <span class="fullscreen-icon expand" aria-hidden="true">↗</span>
+              <span class="fullscreen-icon compress" aria-hidden="true">↙</span>
+            </button>
+          </div>
+          <iframe src="/epub/SEED.html" title="{{ 'iframe_title' | i18n }}" aria-labelledby="app-heading"></iframe>
         </div>
-        <!-- Developers samples -->
-        <div class="sample-set developers-samples">
-          <ul>
-            {% for file in sampleFiles.developers %}
-            <li class="sample-item">
-              <span class="sample-name">{{ file.displayName }}</span>
-              <div class="sample-buttons">
-                <button class="btn-open" onclick="openInSeed('{{ file.path }}')">Open</button>
-              </div>
-            </li>
-            {% endfor %}
-          </ul>
+        <div class="open-in-window-section">
+          <a href="/epub/SEED.html" target="_blank" class="open-new-window" aria-label="{{ 'open_in_new_window' | i18n }}">{{ 'open_in_new_window' | i18n }}</a>
         </div>
-        <!-- All samples -->
-        <div class="sample-set all-samples">
-          <ul>
-            {% for file in sampleFiles.all %}
-            <li class="sample-item">
-              <span class="sample-name">{{ file.displayName }}</span>
-              <div class="sample-buttons">
-                <button class="btn-open" onclick="openInSeed('{{ file.path }}')">Open</button>
-              </div>
-            </li>
-            {% endfor %}
-          </ul>
+        <div class="license-section">
+          <h2>{{ 'license_heading' | i18n }}</h2>
+          <p class="license-text">{{ licenseText }}</p>
+          <a href="/epub/SEED.html" download="SEED.html" class="download-button">{{ 'download_seed_button' | i18n }}</a>
+          <div style="text-align: center;">
+            <a href="{{ '/' if lang.code == 'en' else '/' + lang.code + '/' }}epub/questions/" class="questions-button">{{ 'questions_button' | i18n }}</a>
+          </div>
         </div>
-      </div>
-      <div class="app-frame">
-        <div class="app-frame-header">
-          <button class="fullscreen-toggle" aria-label="{{ 'toggle_fullscreen' | i18n }}" title="{{ 'toggle_fullscreen' | i18n }}">
-            <span class="fullscreen-icon expand" aria-hidden="true">↗</span>
-            <span class="fullscreen-icon compress" aria-hidden="true">↙</span>
-          </button>
-        </div>
-        <iframe src="/epub/SEED.html" title="{{ 'iframe_title' | i18n }}" aria-labelledby="app-heading"></iframe>
-      </div>
-      
-      <div class="license-section">
-        <h2>{{ 'license_heading' | i18n }}</h2>
-        <p class="license-text">{{ licenseText }}</p>
-        <a href="/epub/SEED.html" download="SEED.html" class="download-button">{{ 'download_seed_button' | i18n }}</a>
-        <div style="text-align: center;">
-          <a href="{{ '/' if lang.code == 'en' else '/' + lang.code + '/' }}epub/questions/" class="questions-button">{{ 'questions_button' | i18n }}</a>
-        </div>
-      </div>

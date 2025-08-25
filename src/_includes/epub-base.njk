@@ -7,6 +7,7 @@
     <meta name="description" content="{{ 'meta_description' | i18n }}">
     <link rel="icon" href="/stewarthaines.ico">
     <link rel="stylesheet" href="/epub/seed.css">
+    <link rel="manifest" href="/epub/manifest.json"/>
     <script>
       // Automatic locale detection and redirect
       (function () {
@@ -143,8 +144,8 @@
           if (isFullscreen) {
             appFrame.classList.add('fullscreen');
             body.classList.add('fullscreen-active');
-            toggleButton.setAttribute('aria-label', 'Exit fullscreen');
-            toggleButton.setAttribute('title', 'Exit fullscreen');
+            toggleButton.setAttribute('aria-label', '{{ "exit_fullscreen" | i18n }}');
+            toggleButton.setAttribute('title', '{{ "exit_fullscreen" | i18n }}');
             // Enable focus trapping
             focusTrapping.enable();
             // Focus the toggle button (primary focusable element in overlay)
@@ -191,11 +192,10 @@
       <div class="container">
         <a href="{{ '/' if lang.code == 'en' else '/' + lang.code + '/' }}" style="position: absolute; top: 20px; left: 20px; display: inline-flex; align-items: center; text-decoration: none; color: #666; font-size: 12px; z-index: 10;">
           <img
-            alt="the Stewart Haines dot com logo"
+            alt="{{ 'logo_alt_text' | i18n }}"
             src="/images/logo_small.png"
-            style="width: 16px; height: 16px; margin-right: 6px;"
-          />
-          <span>← Back</span>
+            style="width: 16px; height: 16px; margin-right: 6px;"/>
+          <span>{{ 'back_button' | i18n }}</span>
         </a>
         <div class="header-content">
           <div class="header-text">
