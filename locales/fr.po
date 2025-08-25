@@ -602,3 +602,28 @@ msgstr ""
 "Je suis <span id='on-mastodon'>sur Mastodon</span> pour soutenir ce projet "
 "en tant que [@editme@mastodon.social](https://mastodon.social/@editme) (SEED."
 "html)"
+
+#: src/epub.njk:146
+#, fuzzy
+msgid "open_in_new_window"
+msgstr "Ouvrir l'outil EPUB dans une nouvelle fenêtre"
+
+#: src/_includes/epub-base.njk:198
+msgid "back_button"
+msgstr ""
+
+#: src/_includes/epub-simple-base.njk:71
+msgid "breadcrumb_nav_label"
+msgstr ""
+
+#: src/_includes/epub-base.njk:147 src/_includes/epub-base.njk:148
+msgid "exit_fullscreen"
+msgstr ""
+
+#: src/_includes/epub-base.njk:195
+msgid "logo_alt_text"
+msgstr ""
+
+#: src/epub.njk:92 src/epub.njk:105 src/epub.njk:118 src/epub.njk:131
+msgid "open_button"
+msgstr ""

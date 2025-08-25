@@ -71,5 +71,6 @@
   "qa_process_q": "🤖 Quel a été le processus de développement ?",
   "qa_process_a": "🤖 **Tous les codes d'application et les tests** pour cette version de l'application ont été produits à l'aide du produit [Code Claude d'Anthropic](https://claude.ai/code), principalement avec les modèles Sonnet 3.7 et 4.\n\nJ'ai précédemment écrit une version en utilisant claude avec une pile **VueJS**, et avant cela, j'ai écrit une version VueJS *\"manuellement\"*.\n\nLes idées ont été bien travaillées dans ce processus, mais je pense que ce n'est **pas la forme ultime ** d'un environnement de création ePub basé sur un navigateur scriptable.",
   "qa_who_q": "🤖 Qui a fait ça?",
-  "qa_who_a": "🤖 Je m'appelle **Stewart Haines**. Je vis à Melbourne/Naarm, en Australie.\n\nJe suis <span id='on-mastodon'>sur Mastodon</span> pour soutenir ce projet en tant que [@editme@mastodon.social](https://mastodon.social/@editme) (SEED.html)"
+  "qa_who_a": "🤖 Je m'appelle **Stewart Haines**. Je vis à Melbourne/Naarm, en Australie.\n\nJe suis <span id='on-mastodon'>sur Mastodon</span> pour soutenir ce projet en tant que [@editme@mastodon.social](https://mastodon.social/@editme) (SEED.html)",
+  "open_in_new_window": "Ouvrir l'outil EPUB dans une nouvelle fenêtre"
 }

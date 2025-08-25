@@ -71,5 +71,6 @@
   "qa_process_q": "🤖 <ph id=\"mtc_1\" equiv-text=\"base64:Jmx0O2ImZ3Q7\"/>Wie<bx id=\"2\"/> war der Entwicklungsprozess?",
   "qa_process_a": "🤖 **Alle Anwendungscodes und Tests** für diese Version der App wurden mit dem Produkt [Anthropic's Claude Code](https://claude.ai/code) erstellt, hauptsächlich mit den Sonnet 3.7- und 4-Modellen.\n\nIch habe zuvor eine Version mit Claude mit einem **VueJS** -Stack geschrieben und davor eine VueJS-Version *\"manuell\"*.\n\nDie Ideen wurden in diesem Prozess gut überarbeitet, aber ich gehe davon aus, dass dies **nicht die ultimative Form** einer skriptfähigen browserbasierten EPUB-Authoring-Umgebung ist.",
   "qa_who_q": "🤖 Wer hat das gemacht?",
-  "qa_who_a": "🤖 Mein Name ist **Stewart Haines**. Ich lebe in Melbourne/Naarm, Australien.\n\nIch bin <span id='on-mastodon'>auf Mastodon</span>, um dieses Projekt als [@editme@mastodon.social](https://mastodon.social/@editme) zu unterstützen (SEED.html)"
+  "qa_who_a": "🤖 Mein Name ist **Stewart Haines**. Ich lebe in Melbourne/Naarm, Australien.\n\nIch bin <span id='on-mastodon'>auf Mastodon</span>, um dieses Projekt als [@editme@mastodon.social](https://mastodon.social/@editme) zu unterstützen (SEED.html)",
+  "open_in_new_window": "EPUB-Tool in neuem Fenster öffnen"
 }
