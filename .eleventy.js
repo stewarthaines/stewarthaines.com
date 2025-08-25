@@ -1,18 +1,20 @@
-const i18n = require('eleventy-plugin-i18n');
-const fs = require('fs');
-const markdownIt = require('markdown-it');
+const i18n = require("eleventy-plugin-i18n");
+const fs = require("fs");
+const markdownIt = require("markdown-it");
 
 // Load translations from JSON files
 function loadTranslations() {
-  const languages = ['en', 'es', 'fr', 'de'];
+  const languages = ["en", "es", "fr", "de"];
   const translations = {};
-  
+
   // Load each language file
-  languages.forEach(lang => {
+  languages.forEach((lang) => {
     try {
-      const data = JSON.parse(fs.readFileSync(`src/_data/locales/${lang}.json`, 'utf8'));
+      const data = JSON.parse(
+        fs.readFileSync(`src/_data/locales/${lang}.json`, "utf8")
+      );
       // Convert flat structure to plugin format
-      Object.keys(data).forEach(key => {
+      Object.keys(data).forEach((key) => {
         if (!translations[key]) translations[key] = {};
         translations[key][lang] = data[key];
       });
@@ -20,7 +22,7 @@ function loadTranslations() {
       console.warn(`Could not load translations for ${lang}:`, error.message);
     }
   });
-  
+
   return translations;
 }
 
@@ -28,42 +30,42 @@ const translations = loadTranslations();
 
 // Configure markdown-it
 const md = markdownIt({
-  html: true,        // Allow HTML tags in markdown
-  linkify: true,     // Auto-convert URLs to links
+  html: true, // Allow HTML tags in markdown
+  linkify: true, // Auto-convert URLs to links
   typographer: true, // Smart quotes and dashes
-  breaks: true       // Convert \n to <br>
+  breaks: true, // Convert \n to <br>
 });
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // Configure i18n plugin
   eleventyConfig.addPlugin(i18n, {
     translations,
     fallbackLocales: {
-      'es': 'en',
-      'fr': 'en',
-      'de': 'en',
-      '*': 'en'  // Default fallback to English
+      es: "en",
+      fr: "en",
+      de: "en",
+      "*": "en", // Default fallback to English
     },
-    defaultLanguage: 'en'
+    defaultLanguage: "en",
   });
 
   // Add markdown filters
   // Inline markdown (no <p> wrapper)
   eleventyConfig.addFilter("md", (content) => {
-    return content ? md.renderInline(content) : '';
+    return content ? md.renderInline(content) : "";
   });
 
   // Block markdown (with <p> tags)
   eleventyConfig.addFilter("mdBlock", (content) => {
-    return content ? md.render(content) : '';
+    return content ? md.render(content) : "";
   });
 
   // Disable live reload script injection to prevent corruption of standalone HTML apps
   eleventyConfig.setServerOptions({
-    liveReload: false
+    liveReload: false,
   });
 
-  // Copy existing static assets unchanged  
+  // Copy existing static assets unchanged
   eleventyConfig.addPassthroughCopy("index.html");
   eleventyConfig.addPassthroughCopy("EDITME.html");
   eleventyConfig.addPassthroughCopy("sh2.css");
@@ -74,7 +76,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("picklets");
   eleventyConfig.addPassthroughCopy("RoadkillTour");
   eleventyConfig.addPassthroughCopy("CNAME");
-  
+
   // Preserve existing epub folder but exclude index.html (we'll generate it)
   eleventyConfig.addPassthroughCopy("epub/SEED.html");
   eleventyConfig.addPassthroughCopy("epub/seed.css");
@@ -85,6 +87,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("epub/indexeddb");
   eleventyConfig.addPassthroughCopy("epub/lite");
   eleventyConfig.addPassthroughCopy("epub/samples");
+  eleventyConfig.addPassthroughCopy("epub/sw.js");
+  eleventyConfig.addPassthroughCopy("epub/manifest.json");
 
   // Completely ignore template processing for epub and RoadkillTour
   eleventyConfig.ignores.add("epub/**/*.html");
@@ -100,7 +104,7 @@ module.exports = function(eleventyConfig) {
   return {
     dir: {
       input: "src",
-      output: "_site"
-    }
+      output: "_site",
+    },
   };
 };
