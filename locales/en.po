@@ -587,7 +587,7 @@ msgstr "Open in new window"
 
 #: src/_includes/epub-base.njk:198
 msgid "back_button"
-msgstr ""
+msgstr "Back"
 
 #: src/_includes/epub-simple-base.njk:71
 #, fuzzy
