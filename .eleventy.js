@@ -81,8 +81,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("epub/SEED.html");
   eleventyConfig.addPassthroughCopy("epub/seed.css");
   eleventyConfig.addPassthroughCopy("epub/georgia.epub");
-  eleventyConfig.addPassthroughCopy("epub/feed.opds");
-  eleventyConfig.addPassthroughCopy("epub/feed.opds.xml");
   eleventyConfig.addPassthroughCopy("epub/full");
   eleventyConfig.addPassthroughCopy("epub/indexeddb");
   eleventyConfig.addPassthroughCopy("epub/lite");

@@ -1,0 +1,48 @@
+---
+permalink: /epub/feed.opds.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:opds="http://opds-spec.org/2010/catalog">
+
+  <id>urn:uuid:5d0a5742-fd9e-4d58-abfe-4d39c8f58e01</id>
+  <title>SEED Sample EPUB Collection</title>
+  <updated>2025-08-26T00:00:00Z</updated>
+  <author>
+    <name>Stewart Haines</name>
+  </author>
+  <link rel="self" href="/epub/feed.opds.xml" type="application/atom+xml;profile=opds-catalog;kind=acquisition"/>
+  <link rel="start" href="/epub/feed.opds.xml" type="application/atom+xml;profile=opds-catalog;kind=acquisition"/>
+
+  {% for categoryName, books in epubs %}
+    {% for book in books %}
+      <entry>
+        <id>{{ book.uuid | default("urn:uuid:unknown") }}</id>
+        <title>{{ book.title | default("Untitled") }}</title>
+        {% for author in book.authors %}
+          <author>
+            <name>{{ author }}</name>
+          </author>
+        {% endfor %}
+        <updated>{{ book.modified | default("2025-01-01T00:00:00Z") }}</updated>
+        {% if book.language %}
+          <dc:language>{{ book.language }}</dc:language>
+        {% endif %}
+        {% if book.publisher %}
+          <dc:publisher>{{ book.publisher }}</dc:publisher>
+        {% endif %}
+        {% if book.description %}
+          <summary>{{ book.description | escape }}</summary>
+        {% endif %}
+        <category term="{{ categoryName }}" label="{{ categoryName | capitalize }}"/>
+        {% for subject in book.subjects %}
+          <category term="{{ subject | slugify }}" label="{{ subject }}"/>
+        {% endfor %}
+        <link rel="http://opds-spec.org/acquisition" href="{{ book.relativePath }}" type="application/epub+zip"/>
+      </entry>
+
+    {% endfor %}
+  {% endfor %}
+</feed>
