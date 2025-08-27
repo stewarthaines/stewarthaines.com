@@ -1,4 +1,4 @@
-const CACHE_NAME = "seed-v0.4.0";
+const CACHE_NAME = "seed-v0.4.1";
 
 const urlsToCache = ["./", "./SEED.html", "seed.css", "index.html"];
 
