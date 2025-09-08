@@ -40,7 +40,7 @@ permalink: /epub/feed.opds.xml
         {% for subject in book.subjects %}
           <category term="{{ subject | slugify }}" label="{{ subject }}"/>
         {% endfor %}
-        <link rel="http://opds-spec.org/acquisition" href="{{ book.relativePath }}" type="application/epub+zip"/>
+        <link rel="http://opds-spec.org/acquisition" href="{{ book.relativePath | urlencode }}" type="application/epub+zip"/>
       </entry>
 
     {% endfor %}

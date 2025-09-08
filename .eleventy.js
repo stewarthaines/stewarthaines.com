@@ -85,7 +85,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("epub/indexeddb");
   eleventyConfig.addPassthroughCopy("epub/lite");
   eleventyConfig.addPassthroughCopy("epub/samples");
-  eleventyConfig.addPassthroughCopy("epub/sw.js");
   eleventyConfig.addPassthroughCopy("epub/manifest.json");
 
   // Completely ignore template processing for epub and RoadkillTour
