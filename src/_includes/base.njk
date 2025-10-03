@@ -1,30 +1,45 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTDXHTML1.0Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <title>{{ title }} - StewartHaines.com</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-  <meta http-equiv="Content-Language" content="en-us" />
-  <link rel="shortcut icon" href="/stewarthaines.ico" type="image/ico" />
-  <link rel="stylesheet" href="/sh2.css" />
-</head>
-<body>
-  <div id="content">
-    <div id="column1">
-      <div class="sidebar">
-        <div style="margin-bottom: 20px;">
-          <img alt="the Stewart Haines dot com logo" class="icon" src="/images/logo_small.png" />
-          <h1><a href="/">StewartHaines</a></h1>
-          <h3>Kern like no-one's watching</h3>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-TPSM2V2GQX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-TPSM2V2GQX');
+    </script>
+    <title>{{ title }} - StewartHaines.com</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+    <meta http-equiv="Content-Language" content="en-us"/>
+    <link rel="shortcut icon" href="/stewarthaines.ico" type="image/ico"/>
+    <link rel="stylesheet" href="/sh2.css"/>
+  </head>
+  <body>
+    <div id="content">
+      <div id="column1">
+        <div class="sidebar">
+          <div style="margin-bottom: 20px;">
+            <img alt="the Stewart Haines dot com logo" class="icon" src="/images/logo_small.png"/>
+            <h1>
+              <a href="/">StewartHaines</a>
+            </h1>
+            <h3>Kern like no-one's watching</h3>
+          </div>
+
+          <nav>
+            <p>
+              <a href="/">← Back to main site</a>
+            </p>
+          </nav>
+
+          {{ content | safe }}
         </div>
-        
-        <nav>
-          <p><a href="/">← Back to main site</a></p>
-        </nav>
-        
-        {{ content | safe }}
       </div>
     </div>
-  </div>
-  <p id="extracontact">contact: stewarthaines@gmail.com</p>
-</body>
+    <p id="extracontact">contact: stewarthaines@gmail.com</p>
+  </body>
 </html>
