@@ -162,8 +162,6 @@ layout: epub-base.njk
           <a href="/epub/SEED.html?{{ seedVersion }}#" target="_blank" class="open-new-window" aria-label="{{ 'open_in_new_window' | i18n }}">{{ 'open_in_new_window' | i18n }}</a>
         </div>
         <div class="license-section">
-          <h2>{{ 'license_heading' | i18n }}</h2>
-          <p class="license-text">{{ licenseText }}</p>
           <a href="/epub/SEED.html?{{ seedVersion }}" download="SEED.html" class="download-button">{{ 'download_seed_button' | i18n }}</a>
           <div style="text-align: center;">
             <a href="{{ '/' if lang.code == 'en' else '/' + lang.code + '/' }}epub/questions/" class="questions-button">{{ 'questions_button' | i18n }}</a>
